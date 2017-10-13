@@ -1,3 +1,12 @@
 <div style="text-align:center">
   <h1>Todo List</h1>
 </div>
+
+<mat-toolbar>
+  <mat-form-field class="example-full-width">
+    <input matInput name="newTodo">
+  </mat-form-field>
+  <mat-toolbar-row *ngFor="let todo of todos">
+    <span>{{todo.name}}</span>
+  </mat-toolbar-row>
+</mat-toolbar>
