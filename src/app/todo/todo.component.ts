@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UUID } from 'angular2-uuid';
 
 import { TODOS } from '../../common/mockedData';
 
@@ -10,6 +11,14 @@ import { TODOS } from '../../common/mockedData';
 export class TodoComponent implements OnInit {
   todos = [];
   newTodo = '';
+
+  handleToggleTodo(event) {
+    this.todos = this.todos.map(todo =>
+      todo.id === event.id
+      ?  {...todo, completed: !todo.completed}
+      : todo);
+  }
+
   constructor() { }
 
   ngOnInit() {

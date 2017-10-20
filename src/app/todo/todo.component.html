@@ -2,11 +2,14 @@
   <h1>Todo List</h1>
 </div>
 
-<mat-toolbar>
-  <mat-form-field class="example-full-width">
-    <input matInput name="newTodo">
-  </mat-form-field>
-  <mat-toolbar-row *ngFor="let todo of todos">
-    <span>{{todo.name}}</span>
-  </mat-toolbar-row>
-</mat-toolbar>
+<mat-form-field class="add-todo">
+  <input matInput placeholder="Add new todo" name="newTodo">
+</mat-form-field>
+
+<mat-list>
+  <mat-list-item *ngFor="let todo of todos" (click)="handleToggleTodo(todo)">
+    <span [ngClass]="todo.completed ? 'completed' : 'not-completed'">
+      {{todo.name}}
+    </span>
+  </mat-list-item>
+</mat-list>

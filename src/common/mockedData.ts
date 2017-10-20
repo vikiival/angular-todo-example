@@ -1,12 +1,12 @@
 export const TODOS = [
-  { id: 11, name: 'Clean dishes'},
-  { id: 12, name: 'Mac stuff' },
-  { id: 13, name: 'Fix todo app' },
-  { id: 14, name: 'Learn angular' },
-  { id: 15, name: 'Open spotify' },
-  { id: 16, name: 'Install OSX' },
-  { id: 17, name: 'Sleep' },
-  { id: 18, name: 'Visit home' },
-  { id: 19, name: 'Do trello' },
-  { id: 20, name: 'React..' }
+  { id: 11, name: 'Clean dishes', completed: false},
+  { id: 12, name: 'Mac stuff', completed: false},
+  { id: 13, name: 'Fix todo app', completed: false },
+  { id: 14, name: 'Learn angular', completed: false },
+  { id: 15, name: 'Open spotify', completed: false },
+  { id: 16, name: 'Install OSX', completed: false },
+  { id: 17, name: 'Sleep', completed: false },
+  { id: 18, name: 'Visit home', completed: false },
+  { id: 19, name: 'Do trello', completed: false },
+  { id: 20, name: 'React..', completed: false }
 ];

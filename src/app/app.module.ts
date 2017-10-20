@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatInputModule} from '@angular/material';
+import {MatListModule, MatInputModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 
 const DesignModules = [
-  MatToolbarModule,
+  MatListModule,
   MatInputModule
 ];
 
@@ -22,7 +22,9 @@ const DesignModules = [
     DesignModules,
   ],
   providers: [],
-  exports: [DesignModules],
+  exports: [
+    DesignModules,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,15 @@
+.add-todo {
+  width: 100%;
+}
+
+mat-list-item:hover {
+  background-color: silver;
+}
+
+.not-completed {
+  font-weight: bold;
+}
+
+.completed {
+  text-decoration: line-through;
+}
