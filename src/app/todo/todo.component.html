@@ -3,7 +3,7 @@
 </div>
 
 <mat-form-field class="add-todo">
-  <input matInput placeholder="Add new todo" name="newTodo">
+  <input matInput placeholder="Add new todo" (keyup)="handleAddTodo($event)">
 </mat-form-field>
 
 <mat-list>

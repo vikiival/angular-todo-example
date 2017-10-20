@@ -12,6 +12,19 @@ export class TodoComponent implements OnInit {
   todos = [];
   newTodo = '';
 
+  handleAddTodo(event) {
+    if (event.code === 'Enter') {
+      this.todos = [
+        ...this.todos,
+        {
+            id: 69,
+            name: event.target.value,
+            completed: false
+          }
+      ]
+    }
+  }
+
   handleToggleTodo(event) {
     this.todos = this.todos.map(todo =>
       todo.id === event.id
