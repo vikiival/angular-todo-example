@@ -6,10 +6,19 @@ mat-list-item:hover {
   background-color: silver;
 }
 
-.not-completed {
+.active {
   font-weight: bold;
 }
 
 .completed {
   text-decoration: line-through;
+}
+
+mat-radio-button {
+  padding-right: 20px;
+}
+
+mat-radio-group {
+  display: block;
+  margin: auto;
 }

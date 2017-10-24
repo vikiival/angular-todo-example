@@ -17,12 +17,16 @@ export class TodoComponent implements OnInit {
       this.todos = [
         ...this.todos,
         {
-            id: 69,
+            id: UUID.UUID(),
             name: event.target.value,
             completed: false
           }
       ]
     }
+  }
+
+  handleRadioButton(event) {
+    console.log(event);
   }
 
   handleToggleTodo(event) {

@@ -6,10 +6,16 @@
   <input matInput placeholder="Add new todo" (keyup)="handleAddTodo($event)">
 </mat-form-field>
 
+<mat-radio-group (click)="handleRadioButton(value)">
+  <mat-radio-button value="all">SHOW ALL</mat-radio-button>
+  <mat-radio-button value="active">SHOW ACTIVE</mat-radio-button>
+  <mat-radio-button value="completed">SHOW COMPLETED</mat-radio-button>
+</mat-radio-group>
+
 <mat-list>
   <mat-list-item *ngFor="let todo of todos" (click)="handleToggleTodo(todo)">
-    <span [ngClass]="todo.completed ? 'completed' : 'not-completed'">
-      {{todo.name}}
+    <span [ngClass]="todo.completed ? 'completed' : 'active'">
+      {{  todo.name | uppercase }}
     </span>
   </mat-list-item>
 </mat-list>
