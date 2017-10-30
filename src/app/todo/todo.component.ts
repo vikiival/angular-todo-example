@@ -12,6 +12,33 @@ export class TodoComponent implements OnInit {
   todos = [];
   newTodo = '';
 
+  handleAddTodo(event) {
+    if (event.code === 'Enter') {
+      this.todos = [
+        ...this.todos,
+        {
+            id: UUID.UUID(),
+            name: event.target.value,
+            completed: false
+          }
+      ]
+    }
+  }
+
+  handleRadioButton(event) {
+    console.log(event.target.innerText);
+    switch(event.target.innerText) {
+    case "SHOW ACTIVE":
+        this.todos = this.todos.filter(todo => !todo.completed);
+        break;
+    case "SHOW COMPLETED":
+        this.todos = this.todos.filter(todo => todo.completed);
+        break;
+    default:
+        this.todos = TODOS;
+}
+  }
+
   handleToggleTodo(event) {
     this.todos = this.todos.map(todo =>
       todo.id === event.id
