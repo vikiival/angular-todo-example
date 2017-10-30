@@ -1,3 +1,17 @@
-<p>
-  login works!
-</p>
+<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+  <div class="content-wrapper">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Username" formControlName="userName">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+
+    <div class="login-actions">
+      <button type="submit" mat-raised-button>Login</button>
+    </div>
+    <!--<div>-->
+      <!--{{ loginForm.get('userName').value }}-->
+    <!--</div>-->
+  </div>
+</form>
