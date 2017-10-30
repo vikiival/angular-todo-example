@@ -26,7 +26,17 @@ export class TodoComponent implements OnInit {
   }
 
   handleRadioButton(event) {
-    console.log(event);
+    console.log(event.target.innerText);
+    switch(event.target.innerText) {
+    case "SHOW ACTIVE":
+        this.todos = this.todos.filter(todo => !todo.completed);
+        break;
+    case "SHOW COMPLETED":
+        this.todos = this.todos.filter(todo => todo.completed);
+        break;
+    default:
+        this.todos = TODOS;
+}
   }
 
   handleToggleTodo(event) {

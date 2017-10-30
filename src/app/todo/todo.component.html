@@ -6,7 +6,7 @@
   <input matInput placeholder="Add new todo" (keyup)="handleAddTodo($event)">
 </mat-form-field>
 
-<mat-radio-group (click)="handleRadioButton(value)">
+<mat-radio-group (click)="handleRadioButton($event)">
   <mat-radio-button value="all">SHOW ALL</mat-radio-button>
   <mat-radio-button value="active">SHOW ACTIVE</mat-radio-button>
   <mat-radio-button value="completed">SHOW COMPLETED</mat-radio-button>
