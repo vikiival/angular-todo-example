@@ -10,3 +10,10 @@ export const TODOS = [
   { id: 19, name: 'Do trello', completed: false },
   { id: 20, name: 'React..', completed: false }
 ];
+
+export const USERS = [
+  { id: 14, name: 'Viki', password: 'viki' },
+  { id: 15, name: 'Jess', password: 'jess' },
+  { id: 16, name: 'Patrik', password: 'patrik' },
+  { id: 17, name: 'Snake', password: 'snake' }
+];

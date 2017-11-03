@@ -9,10 +9,12 @@ import {
   MatButtonModule
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
+import { loginReducer } from './login/login.reducer';
 
 const DesignModules = [
   MatListModule,
@@ -33,7 +35,8 @@ const DesignModules = [
     DesignModules,
     RoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({ login: loginReducer })
   ],
   providers: [],
   exports: [
