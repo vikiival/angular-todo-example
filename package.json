@@ -27,6 +27,7 @@
     "@angular/router": "^4.4.6",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^4.1.0",
+    "@ngrx/store-devtools": "^4.0.0",
     "@types/node": "^6.0.90",
     "angular2-uuid": "^1.1.1",
     "codelyzer": "^3.2.2",

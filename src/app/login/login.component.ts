@@ -13,7 +13,7 @@ import { LoginModel } from './login.interface';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  loggedUser$: object;
+  // loggedUser$: string; //Observable<LoginModel>;
 
   constructor(
     private fb: FormBuilder,
@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
       userName : [''],
       password : ['', Validators.required],
     });
+
+    console.log(this.store.select('password'));
+    // this.loggedUser$ = store.select('login');
   }
 
   submitLogin() {
