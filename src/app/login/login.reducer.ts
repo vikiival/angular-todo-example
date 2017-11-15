@@ -8,7 +8,7 @@ export function loginReducer(state: object = defaultState, action: LoginActions.
   console.log(action);
   switch (action.type) {
     case 'LOGIN':
-      return state = action.payload;
+      return action.payload;
     default:
       return state;
   }

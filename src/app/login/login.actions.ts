@@ -3,10 +3,10 @@ import { LoginModel } from './login.interface';
 
 export const LOGIN = 'LOGIN';
 
-export class Login implements Action {
+export class LoginAction implements Action {
   type = LOGIN;
   constructor(public payload: LoginModel) { }
 }
 
 
-export type Actions = Login;
+export type Actions = LoginAction;

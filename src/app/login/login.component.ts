@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import { LoginModel } from './login.interface';
+import {LOGIN} from './login.actions';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ import { LoginModel } from './login.interface';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-  // loggedUser$: string; //Observable<LoginModel>;
+  loggedUser$: Observable<LoginModel>;
 
   constructor(
     private fb: FormBuilder,
@@ -24,16 +25,16 @@ export class LoginComponent implements OnInit {
       password : ['', Validators.required],
     });
 
-    console.log(this.store.select('password'));
-    // this.loggedUser$ = store.select('login');
+    this.loggedUser$ = this.store;
+    console.log('HERE');
   }
 
   submitLogin() {
     this.store.dispatch({
-      type: 'LOGIN',
+      type: LOGIN,
       payload: this.loginForm.value
     });
-    console.log(this.loginForm.value);
+    // console.log(this.loginForm.value);
   }
   ngOnInit() {
   }
