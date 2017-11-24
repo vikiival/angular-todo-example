@@ -15,8 +15,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
-import { loginReducer } from './login/login.reducer';
 import { ProfileComponent } from './profile/profile.component';
+import {reducers} from './app.reducer';
 
 const DesignModules = [
   MatListModule,
@@ -39,7 +39,7 @@ const DesignModules = [
     RoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ login: loginReducer }),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) //  Retains last 25 states
   ],
   providers: [],
