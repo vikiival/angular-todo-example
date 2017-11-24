@@ -16,6 +16,7 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import { loginReducer } from './login/login.reducer';
+import { ProfileComponent } from './profile/profile.component';
 
 const DesignModules = [
   MatListModule,
@@ -28,7 +29,8 @@ const DesignModules = [
   declarations: [
     AppComponent,
     TodoComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

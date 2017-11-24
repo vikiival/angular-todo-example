@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
       type: LOGIN,
       payload: this.loginForm.value
     });
-    // console.log(this.loginForm.value);
   }
   ngOnInit() {
   }
