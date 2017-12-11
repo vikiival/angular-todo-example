@@ -1,0 +1,32 @@
+.content-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+  padding-top: 20%;
+
+mat-form-field {
+  width: 100%;
+}
+}
+
+.login-actions {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  padding-bottom: 10px;
+  width: 100%;
+
+button {
+  align-self: flex-start;
+}
+
+a {
+  align-self: flex-end;
+  flex: 3;
+}
+}

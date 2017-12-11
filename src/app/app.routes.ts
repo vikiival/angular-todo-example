@@ -2,6 +2,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
+import {ProfileComponent} from "./profile/profile.component";
 
 const routes: Routes = [
   // logged routes
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     component: LoginComponent,
     path: 'login'
+  },
+  {
+    component: ProfileComponent,
+    path: 'profile'
   },
 ];
 
