@@ -5,7 +5,11 @@ import { Observable } from 'rxjs/Observable';
 
 import { TODOS } from '../../common/mockedData';
 import {TodoModel} from './todo.interface';
-import {ADD_TODO} from './todo.actions';
+import {ADD_TODO, TOGGLE_TODO} from './todo.actions';
+
+interface AppState {
+  todos: TodoModel[];
+}
 
 @Component({
   selector: 'app-todo',
@@ -17,9 +21,9 @@ export class TodoComponent implements OnInit {
   todos$: Observable<TodoModel[]>;
 
   constructor(
-    private store: Store<TodoModel>
+    private store: Store<AppState>
   ) {
-    // this.todos$ = store.select('todos');
+    this.todos$ = this.store.select('todos');
   }
 
   handleAddTodo(event) {
@@ -50,10 +54,12 @@ export class TodoComponent implements OnInit {
   }
 
   handleToggleTodo(event) {
-    this.todos = this.todos.map(todo =>
-      todo.id === event.id
-      ?  {...todo, completed: !todo.completed}
-      : todo);
+    this.store.dispatch({
+      type: TOGGLE_TODO,
+      payload: {
+        id: event.id
+      }
+    });
   }
 
   ngOnInit() {

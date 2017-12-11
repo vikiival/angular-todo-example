@@ -13,7 +13,7 @@
 </mat-radio-group>
 
 <mat-list>
-  <mat-list-item *ngFor="let todo of todos" (click)="handleToggleTodo(todo)">
+  <mat-list-item *ngFor="let todo of todos$ | async" (click)="handleToggleTodo(todo)">
     <span [ngClass]="todo.completed ? 'completed' : 'active'">
       {{  todo.name | uppercase }}
     </span>

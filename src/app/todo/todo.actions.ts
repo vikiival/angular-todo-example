@@ -15,4 +15,4 @@ export class ToggleTodo implements Action {
 }
 
 
-export type Actions = AddTodoAction;
+export type Actions = AddTodoAction | ToggleTodo;

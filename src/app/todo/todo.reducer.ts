@@ -8,6 +8,11 @@ export function todoReducer(state: TodoModel[] = defaultState, action: TodoActio
   switch (action.type) {
     case TodoActions.ADD_TODO:
       return [ ...state, action.payload];
+    case TodoActions.TOGGLE_TODO:
+      return state.map(todo =>
+        todo.id === action.payload.id
+          ?  {...todo, completed: !todo.completed}
+          : todo);
     default:
       return state;
   }
