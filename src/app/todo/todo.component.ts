@@ -7,6 +7,10 @@ import { TODOS } from '../../common/mockedData';
 import {TodoModel} from './todo.interface';
 import {ADD_TODO, TOGGLE_TODO} from './todo.actions';
 
+const SHOW_ACTIVE = 'SHOW ACTIVE';
+const SHOW_COMPLETED = 'SHOW COMPLETED';
+const SHOW_ALL = 'SHOW ALL';
+
 interface AppState {
   todos: TodoModel[];
 }
@@ -17,13 +21,18 @@ interface AppState {
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  todos: TodoModel[];
+  visibility = SHOW_ALL;
   todos$: Observable<TodoModel[]>;
+  todosElements: TodoModel[];
 
   constructor(
     private store: Store<AppState>
   ) {
     this.todos$ = this.store.select('todos');
+
+    this.todos$.subscribe(
+      elements => this.todosElements = elements
+    );
   }
 
   handleAddTodo(event) {
@@ -42,15 +51,23 @@ export class TodoComponent implements OnInit {
   handleRadioButton(event) {
     console.log(event.target.innerText);
     switch (event.target.innerText) {
-    case 'SHOW ACTIVE':
-        this.todos = this.todos.filter(todo => !todo.completed);
+      case SHOW_ACTIVE:
+        this.todos$.subscribe(
+          elements => this.todosElements = elements.filter(todo => !todo.completed)
+        );
         break;
-    case 'SHOW COMPLETED':
-        this.todos = this.todos.filter(todo => todo.completed);
+      case SHOW_COMPLETED:
+        this.todos$.subscribe(
+          elements => this.todosElements = elements.filter(todo => todo.completed)
+        );
         break;
-    default:
-        this.todos = TODOS;
-}
+      default:
+        this.todos$.subscribe(
+          elements => this.todosElements = elements
+        );
+    }
+
+    // this.visibility = event.target.innerText;
   }
 
   handleToggleTodo(event) {
@@ -62,8 +79,6 @@ export class TodoComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.todos = TODOS;
-  }
+  ngOnInit() {}
 
 }
