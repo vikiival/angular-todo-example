@@ -3,7 +3,6 @@ import { UUID } from 'angular2-uuid';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
-import { TODOS } from '../../common/mockedData';
 import {TodoModel} from './todo.interface';
 import {ADD_TODO, TOGGLE_TODO} from './todo.actions';
 

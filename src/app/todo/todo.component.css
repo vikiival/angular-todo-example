@@ -1,9 +1,19 @@
+h1 {
+  font-family:Roboto,"Helvetica Neue",sans-serif;
+}
+
 .add-todo {
   width: 100%;
 }
 
+mat-list-item {
+  background-color: white;
+  transition: background-color 700ms ease-out;
+}
+
 mat-list-item:hover {
   background-color: silver;
+  transition: background-color 200ms ease-in-out;
 }
 
 .active {
