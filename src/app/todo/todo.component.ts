@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { UUID } from 'angular2-uuid';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -22,7 +22,8 @@ interface AppState {
 export class TodoComponent implements OnInit {
   visibility = SHOW_ALL;
   todos$: Observable<TodoModel[]>;
-  todosElements: TodoModel[];
+  todoElements: TodoModel[];
+  filteredTodos: TodoModel[];
 
   constructor(
     private store: Store<AppState>
@@ -30,7 +31,10 @@ export class TodoComponent implements OnInit {
     this.todos$ = this.store.select('todos');
 
     this.todos$.subscribe(
-      elements => this.todosElements = elements
+      elements => {
+        this.todoElements = elements;
+        this.handleRadioButton(this.visibility);
+      }
     );
   }
 
@@ -48,25 +52,18 @@ export class TodoComponent implements OnInit {
   }
 
   handleRadioButton(event) {
-    console.log(event.target.innerText);
-    switch (event.target.innerText) {
+    switch (event) {
       case SHOW_ACTIVE:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements.filter(todo => !todo.completed)
-        );
+        this.filteredTodos = this.todoElements.filter(todo => !todo.completed);
         break;
       case SHOW_COMPLETED:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements.filter(todo => todo.completed)
-        );
+        this.filteredTodos = this.todoElements.filter(todo => todo.completed);
         break;
       default:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements
-        );
+        this.filteredTodos = this.todoElements;
     }
 
-    // this.visibility = event.target.innerText;
+    this.visibility = event;
   }
 
   handleToggleTodo(event) {
