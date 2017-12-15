@@ -1,7 +1,11 @@
-import { loginReducer } from './login/login.reducer';
-import { todoReducer } from './todo/todo.reducer';
+import * as fromLogin from './login/login.reducer';
+import * as fromTodo from './todo/todo.reducer';
+
+// export interface State {
+//   todos: fromTodo.State;
+// }
 
 export const reducers = {
-  login: loginReducer,
-  todos: todoReducer
+  login: fromLogin.loginReducer,
+  todos: fromTodo.todoReducer,
 };

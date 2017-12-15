@@ -22,7 +22,6 @@ interface AppState {
 })
 export class TodoComponent implements OnInit {
   visibility = SHOW_ALL;
-  todos$: Observable<TodoModel[]>;
   todoElements: TodoModel[];
   filteredTodos: TodoModel[];
 
