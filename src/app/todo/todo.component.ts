@@ -5,13 +5,14 @@ import { Observable } from 'rxjs/Observable';
 
 import {TodoModel} from './todo.interface';
 import {ADD_TODO, TOGGLE_TODO} from './todo.actions';
+import {State} from './todo.reducer';
 
 const SHOW_ACTIVE = 'SHOW ACTIVE';
 const SHOW_COMPLETED = 'SHOW COMPLETED';
 const SHOW_ALL = 'SHOW ALL';
 
 interface AppState {
-  todos: TodoModel[];
+  todos: State;
 }
 
 @Component({
@@ -28,14 +29,11 @@ export class TodoComponent implements OnInit {
   constructor(
     private store: Store<AppState>
   ) {
-    this.todos$ = this.store.select('todos');
 
-    this.todos$.subscribe(
-      elements => {
-        this.todoElements = elements;
-        this.handleRadioButton(this.visibility);
-      }
-    );
+    this.store.select('todos').subscribe(data => {
+      this.todoElements = data.todos;
+      this.handleRadioButton(this.visibility);
+    });
   }
 
   handleAddTodo(event) {
