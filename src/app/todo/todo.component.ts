@@ -30,7 +30,7 @@ export class TodoComponent implements OnInit {
   ) {
 
     this.store.select('todos').subscribe(data => {
-      this.todoElements = data.todos;
+      this.todoElements = data ? data.todos : [];
       this.handleRadioButton(this.visibility);
     });
   }

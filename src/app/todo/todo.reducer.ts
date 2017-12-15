@@ -9,7 +9,7 @@ const defaultState: State = {
   todos: []
 };
 
-export function todoReducer(state: State = defaultState, action: TodoActions.Actions) {
+export function todoReducer(state: State = defaultState, action: TodoActions.Actions): State {
   console.log(action);
   switch (action.type) {
     case TodoActions.ADD_TODO:

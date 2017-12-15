@@ -29,6 +29,7 @@ mat-radio-button {
 }
 
 mat-radio-group {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   margin: auto;
 }
