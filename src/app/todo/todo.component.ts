@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { UUID } from 'angular2-uuid';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 
 import {TodoModel} from './todo.interface';
 import {ADD_TODO, TOGGLE_TODO} from './todo.actions';
+import {State} from './todo.reducer';
 
 const SHOW_ACTIVE = 'SHOW ACTIVE';
 const SHOW_COMPLETED = 'SHOW COMPLETED';
 const SHOW_ALL = 'SHOW ALL';
 
 interface AppState {
-  todos: TodoModel[];
+  todos: State;
 }
 
 @Component({
@@ -21,17 +22,17 @@ interface AppState {
 })
 export class TodoComponent implements OnInit {
   visibility = SHOW_ALL;
-  todos$: Observable<TodoModel[]>;
-  todosElements: TodoModel[];
+  todoElements: TodoModel[];
+  filteredTodos: TodoModel[];
 
   constructor(
     private store: Store<AppState>
   ) {
-    this.todos$ = this.store.select('todos');
 
-    this.todos$.subscribe(
-      elements => this.todosElements = elements
-    );
+    this.store.select('todos').subscribe(data => {
+      this.todoElements = data ? data.todos : [];
+      this.handleRadioButton(this.visibility);
+    });
   }
 
   handleAddTodo(event) {
@@ -48,25 +49,18 @@ export class TodoComponent implements OnInit {
   }
 
   handleRadioButton(event) {
-    console.log(event.target.innerText);
-    switch (event.target.innerText) {
+    switch (event) {
       case SHOW_ACTIVE:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements.filter(todo => !todo.completed)
-        );
+        this.filteredTodos = this.todoElements.filter(todo => !todo.completed);
         break;
       case SHOW_COMPLETED:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements.filter(todo => todo.completed)
-        );
+        this.filteredTodos = this.todoElements.filter(todo => todo.completed);
         break;
       default:
-        this.todos$.subscribe(
-          elements => this.todosElements = elements
-        );
+        this.filteredTodos = this.todoElements;
     }
 
-    // this.visibility = event.target.innerText;
+    this.visibility = event;
   }
 
   handleToggleTodo(event) {
