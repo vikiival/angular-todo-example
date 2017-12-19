@@ -45,6 +45,7 @@ export class TodoComponent implements OnInit {
           completed: false
         }
       });
+      event.target.value = '';
     }
   }
 
