@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RoutingModule } from './app.routes';
 import {
@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import {reducers} from './app.reducer';
+import {metaReducers, reducers} from './app.reducer';
 
 const DesignModules = [
   MatListModule,
@@ -39,9 +39,10 @@ const DesignModules = [
     RoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) //  Retains last 25 states
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   exports: [
     DesignModules,
