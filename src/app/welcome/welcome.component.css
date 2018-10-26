@@ -1,0 +1,37 @@
+.welcome-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  height: 800px;
+}
+
+.welcome-image-text {
+  margin: auto;
+  color: white;
+  font-size: 4em;
+  text-align: center;
+}
+
+.welcome-image-button-scroll {
+  position: relative;
+  left: 45%;
+}
+
+.welcome-category-wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: auto;
+}
+
+
+.mat-card {
+  width: 35%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  height: 20px;
+  width: 100%;
+}

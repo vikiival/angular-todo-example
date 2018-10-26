@@ -3,12 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   // logged routes
   {
-    component: TodoComponent,
+    component: WelcomeComponent,
     path: ''
+  },
+  {
+    component: TodoComponent,
+    path: 'todo'
   },
   // not logged routes
   {

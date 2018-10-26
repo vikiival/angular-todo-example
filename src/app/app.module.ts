@@ -8,6 +8,10 @@ import {
   MatRadioModule,
   MatButtonModule
 } from '@angular/material';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -17,12 +21,19 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import {metaReducers, reducers} from './app.reducer';
+import { HeaderComponent } from './header/header.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { CategoryComponent } from './category/category.component';
 
 const DesignModules = [
   MatListModule,
   MatInputModule,
   MatRadioModule,
-  MatButtonModule
+  MatButtonModule,
+  MatToolbarModule,
+  MatCardModule,
+  MatGridListModule,
+  MatSelectModule
 ];
 
 @NgModule({
@@ -30,7 +41,10 @@ const DesignModules = [
     AppComponent,
     TodoComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeaderComponent,
+    WelcomeComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
