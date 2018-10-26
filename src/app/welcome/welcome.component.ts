@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+  selectedArea: string;
+  searchedText: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  scroll(el) {
+    el.scrollIntoView();
+  }
 }

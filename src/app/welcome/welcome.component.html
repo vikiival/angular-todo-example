@@ -1,33 +1,41 @@
 <div class="welcome-image">
-  <div class="welcome-image-text">Sused v nudzi</div>
-  <mat-card>
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Favorite food" value="Sushi">
-    </mat-form-field>
-    <mat-form-field>
-      <mat-select placeholder="Kraj">
-        <mat-option>Bratislava</mat-option>
-        <mat-option>Bratislava</mat-option>
-        <mat-option>Bratislava</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-raised-button color="primary">Primary</button>
-  </mat-card>
-  <button mat-raised-button class="welcome-image-button-scroll" color="primary">Scroll to categories</button>
+  <div class="welcome-image-inside-wrapper">
+    <h2 class="mat-h2 welcome-image-text">Sused v nudzi</h2>
+    <mat-card>
+      <mat-form-field>
+        <input matInput type="search" placeholder="Zacni hladat tu" [(ngModel)]="searchedText">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select [(value)]="selectedArea" placeholder="Vyber si kraj">
+          <mat-option>None</mat-option>
+          <mat-option value="bratislava">Bratislava</mat-option>
+          <mat-option value="kosice">Kosice</mat-option>
+          <mat-option value="trencin">Trencin</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary">Hladaj</button>
+    </mat-card>
+  </div>
+  <button mat-raised-button class="welcome-image-button-scroll" color="primary" (click)="scroll(target)">Scroll to
+    categories
+  </button>
 </div>
 
 <div class="divider"></div>
-<div class="divider"></div>
-<div class="divider"></div>
 
-<div class="welcome-category-wrapper">
-  <app-category></app-category>
-  <app-category></app-category>
-  <app-category></app-category>
+<div #target>
+  <div class="welcome-category-wrapper">
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+  </div>
+  <div class="divider category"></div>
+  <div class="welcome-category-wrapper">
+    <app-category></app-category>
+    <app-category></app-category>
+    <app-category></app-category>
+  </div>
 </div>
+
+
 <div class="divider"></div>
-<div class="welcome-category-wrapper">
-  <app-category></app-category>
-  <app-category></app-category>
-  <app-category></app-category>
-</div>
