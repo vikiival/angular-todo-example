@@ -28,6 +28,7 @@ import { CategoryComponent } from './category/category.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 
 const DesignModules = [
@@ -53,7 +54,8 @@ const DesignModules = [
     CategoryComponent,
     CategoryListComponent,
     ListItemComponent,
-    SearchPanelComponent
+    SearchPanelComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,11 @@
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
-import {ProfileComponent} from './profile/profile.component';
+import { ProfileComponent } from './profile/profile.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { ItemDetailComponent } from './item-detail/item-detail.component';
 
 const routes: Routes = [
   // logged routes
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     component: CategoryListComponent,
     path: 'category'
+  },
+  {
+    component: ItemDetailComponent,
+    path: 'detail'
   },
   {
     component: TodoComponent,

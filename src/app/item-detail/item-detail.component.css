@@ -1,0 +1,26 @@
+.item-detail-wrapper {
+  padding: 3em;
+  padding-left: 4em;
+}
+
+.example-card {
+  max-width: 1240px;
+  margin: 1em 0;
+  padding-bottom: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-card-content {
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-item-button {
+  float: right;
+}
