@@ -1,0 +1,34 @@
+.category-list-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 3em;
+}
+
+.category-list-side-menu-card {
+  max-width: 400px;
+  height: 900px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+h2 {
+  background-color: green;
+  color: white;
+  text-align: center;
+  padding: 0.3em;
+  margin-bottom: 0;
+}
+
+mat-card-title {
+  font-size: 28px !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+mat-card-content {
+  padding: 1em;
+}

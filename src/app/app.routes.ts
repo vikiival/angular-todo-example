@@ -4,6 +4,7 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import {ProfileComponent} from './profile/profile.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CategoryListComponent } from './category-list/category-list.component';
 
 const routes: Routes = [
   // logged routes
@@ -12,10 +13,13 @@ const routes: Routes = [
     path: ''
   },
   {
+    component: CategoryListComponent,
+    path: 'category'
+  },
+  {
     component: TodoComponent,
     path: 'todo'
   },
-  // not logged routes
   {
     component: LoginComponent,
     path: 'login'

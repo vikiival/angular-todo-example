@@ -12,6 +12,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSidenavModule} from '@angular/material/sidenav';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -24,6 +25,10 @@ import {metaReducers, reducers} from './app.reducer';
 import { HeaderComponent } from './header/header.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { CategoryComponent } from './category/category.component';
+import { CategoryListComponent } from './category-list/category-list.component';
+import { ListItemComponent } from './list-item/list-item.component';
+import { SearchPanelComponent } from './search-panel/search-panel.component';
+
 
 const DesignModules = [
   MatListModule,
@@ -33,7 +38,8 @@ const DesignModules = [
   MatToolbarModule,
   MatCardModule,
   MatGridListModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSidenavModule
 ];
 
 @NgModule({
@@ -44,7 +50,10 @@ const DesignModules = [
     ProfileComponent,
     HeaderComponent,
     WelcomeComponent,
-    CategoryComponent
+    CategoryComponent,
+    CategoryListComponent,
+    ListItemComponent,
+    SearchPanelComponent
   ],
   imports: [
     BrowserModule,

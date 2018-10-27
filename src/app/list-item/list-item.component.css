@@ -1,0 +1,22 @@
+.example-card {
+  max-width: 940px;
+  max-height: 273px;
+  padding-bottom: 0;
+  margin: 1em 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-card-content {
+  margin-left: 45px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.list-item-button {
+  float: right;
+}

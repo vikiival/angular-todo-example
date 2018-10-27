@@ -2,18 +2,7 @@
   <div class="welcome-image-inside-wrapper">
     <h2 class="mat-h2 welcome-image-text">Sused v nudzi</h2>
     <mat-card>
-      <mat-form-field>
-        <input matInput type="search" placeholder="Zacni hladat tu" [(ngModel)]="searchedText">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select [(value)]="selectedArea" placeholder="Vyber si kraj">
-          <mat-option>None</mat-option>
-          <mat-option value="bratislava">Bratislava</mat-option>
-          <mat-option value="kosice">Kosice</mat-option>
-          <mat-option value="trencin">Trencin</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <button mat-raised-button color="primary">Hladaj</button>
+      <app-search-panel></app-search-panel>
     </mat-card>
   </div>
   <button mat-raised-button class="welcome-image-button-scroll" color="primary" (click)="scroll(target)">Scroll to
