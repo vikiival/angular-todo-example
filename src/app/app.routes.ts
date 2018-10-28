@@ -19,7 +19,7 @@ const routes: Routes = [
   },
   {
     component: ItemDetailComponent,
-    path: 'detail'
+    path: 'detail/:id'
   },
   {
     component: TodoComponent,

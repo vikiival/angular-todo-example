@@ -16,6 +16,6 @@ export class ListItemComponent implements OnInit {
   }
 
   navigateToCategory() {
-    this.router.navigate([`/detail`]);
+    this.router.navigate([`/detail/${this.item.id}`]);
   }
 }

@@ -12,4 +12,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  addItem() {
+    console.log('create Item');
+  }
+
 }

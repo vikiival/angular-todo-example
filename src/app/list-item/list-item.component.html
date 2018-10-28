@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <div class="wrapper" (click)="navigateToCategory()">
     <div>
-      <img mat-card-image src="../../assets/image-placeholder.png" alt="User Photo">
+      <img mat-card-image [src]="item.photo" alt="User Photo">
     </div>
     <mat-card-content>
       {{ item.text }}
