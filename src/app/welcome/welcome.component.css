@@ -1,12 +1,12 @@
 .welcome-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url('../../assets/lawn.jpg');
   background-size: cover;
   height: 800px;
 }
 
 .welcome-image-text {
   margin: auto;
-  color: white;
+  color: green;
   font-size: 4em;
   text-align: center;
   font-weight: bold;

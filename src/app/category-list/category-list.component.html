@@ -5,12 +5,9 @@
     <mat-card class="search-panel">
       <app-search-panel></app-search-panel>
     </mat-card>
-    <app-list-item></app-list-item>
-    <app-list-item></app-list-item>
-    <app-list-item></app-list-item>
-    <app-list-item></app-list-item>
-    <app-list-item></app-list-item>
-    <app-list-item></app-list-item>
+    <div *ngFor="let item of data">
+      <app-list-item [item]="item"></app-list-item>
+    </div>
   </div>
   <div class="category-list-side-menu">
     <mat-card class="category-list-side-menu-card">

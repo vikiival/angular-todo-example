@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { State } from '../data/data.reducer';
+import { Store } from '@ngrx/store';
+import { Item } from '../../lib/mockItems';
+
+interface AppState {
+  data: State;
+}
 
 @Component({
   selector: 'app-category-list',
@@ -6,8 +13,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
+  data: Item[];
 
-  constructor() { }
+  constructor(
+    private store: Store<AppState>
+  ) {
+    this.store.select('data').subscribe(data => {
+      this.data = data.items ? data.items : [];
+      console.log(this.data);
+    });
+  }
+
 
   ngOnInit() {
   }

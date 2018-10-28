@@ -24,3 +24,8 @@ mat-card-content {
 .list-item-button {
   float: right;
 }
+
+img {
+  max-width: 640px;
+  max-height: 640px;
+}
