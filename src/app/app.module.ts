@@ -9,6 +9,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -25,6 +26,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { ListItemComponent } from './list-item/list-item.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { MenuItemComponent } from './menu-item/menu-item.component';
 
 
 const DesignModules = [
@@ -37,7 +39,8 @@ const DesignModules = [
   MatGridListModule,
   MatSelectModule,
   MatSidenavModule,
-  MatIconModule
+  MatIconModule,
+  MatMenuModule
 ];
 
 @NgModule({
@@ -52,7 +55,8 @@ const DesignModules = [
     CategoryListComponent,
     ListItemComponent,
     SearchPanelComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    MenuItemComponent
   ],
   imports: [
     BrowserModule,

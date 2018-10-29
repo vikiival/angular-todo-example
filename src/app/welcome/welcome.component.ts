@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { Category } from '../../lib/mockItems';
 
 @Component({
   selector: 'app-welcome',
@@ -20,5 +21,9 @@ export class WelcomeComponent implements OnInit {
 
   scroll(el) {
     el.scrollIntoView();
+  }
+
+  getCategory(category: string): Category {
+    return Category[category];
   }
 }

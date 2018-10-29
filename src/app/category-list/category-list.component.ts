@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { State } from '../data/data.reducer';
 import { Store } from '@ngrx/store';
 import { Item } from '../../lib/mockItems';
+import { Router } from '@angular/router';
 
 interface AppState {
   data: State;
@@ -13,14 +14,15 @@ interface AppState {
   styleUrls: ['./category-list.component.css']
 })
 export class CategoryListComponent implements OnInit {
-  data: Item[];
+  data: Item[] = [];
 
   constructor(
-    private store: Store<AppState>
+    private router: Router,
+    private store: Store<AppState>,
   ) {
     this.store.select('data').subscribe(data => {
-      this.data = data.items ? data.items : [];
-      console.log(this.data);
+      console.log('this.router.url', this.router.url);
+      this.data = data.searchedItems ? data.searchedItems : [];
     });
   }
 

@@ -1,5 +1,5 @@
 <mat-form-field>
-  <input matInput type="search" placeholder="Zacni hladat tu" [(ngModel)]="searchedText">
+  <input matInput placeholder="Zacni hladat tu" [(ngModel)]="searchedText">
 </mat-form-field>
 <mat-form-field>
   <mat-select [(value)]="selectedArea" placeholder="Vyber si kraj">
@@ -9,4 +9,4 @@
     <mat-option value="trencin">Trencin</mat-option>
   </mat-select>
 </mat-form-field>
-<button mat-raised-button color="primary">Hladaj</button>
+<button mat-raised-button color="primary" (click)="activateSearch()" [disabled]="!searchedText">Hladaj</button>

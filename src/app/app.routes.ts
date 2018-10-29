@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'category'
   },
   {
+    component: CategoryListComponent,
+    path: 'search'
+  },
+  {
     component: ItemDetailComponent,
     path: 'detail/:id'
   },

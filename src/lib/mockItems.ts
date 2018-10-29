@@ -22,6 +22,7 @@ export interface Item {
   text: string;
   userId: string;
   photo: string;
+  region: string;
 }
 
 export const mockItems: Array<Item> = [
@@ -31,7 +32,8 @@ export const mockItems: Array<Item> = [
     title: 'Postrazim deti',
     text: 'Ak mas deti a nechces ich nechat same',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
-    photo: '../../assets/users/jozefina.jpg'
+    photo: '../../assets/users/jozefina.jpg',
+    region: 'bratislava'
   },
   {
     id: '9a2f77e3-bba1-42c1-847a-33bb41d62e65',
@@ -39,7 +41,8 @@ export const mockItems: Array<Item> = [
     title: 'Upeciem kolac',
     text: 'Ak potrebujes kolacik rada upeciem hocico',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
-    photo: '../../assets/users/jozefina.jpg'
+    photo: '../../assets/users/jozefina.jpg',
+    region: 'trencin'
   }
 ];
 
