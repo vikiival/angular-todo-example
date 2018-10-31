@@ -1,0 +1,37 @@
+<h2 class="mat-h2 add-item-title">Pridanie ponuky</h2>
+<form [formGroup]="addItemForm" (submit)="onSubmit()">
+  <mat-form-field>
+    <mat-select [placeholder]="'Kategoria'"
+                formControlName="category">
+      <mat-option>None</mat-option>
+      <mat-option value="1">Zahrada</mat-option>
+      <mat-option value="2">Deti</mat-option>
+      <mat-option value="3">Domacnost</mat-option>
+      <mat-option value="4">IT</mat-option>
+      <mat-option value="5">Udalosti</mat-option>
+      <mat-option value="6">Domaci Kutil</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select [placeholder]="'kraj'"
+                formControlName="region">
+      <mat-option>None</mat-option>
+      <mat-option value="bratislava">Bratislava</mat-option>
+      <mat-option value="kosice">Kosice</mat-option>
+      <mat-option value="trencin">Trencin</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="title"
+           maxlength="35" [placeholder]="'nadpis'">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput formControlName="text"
+           maxlength="35" [placeholder]="'popis ponuky'">
+    </textarea>
+  </mat-form-field>
+  <button type="submit" [disabled]="!addItemForm.valid" mat-raised-button>
+    Pridaj Ponuku!
+  </button>
+</form>

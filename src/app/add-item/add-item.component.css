@@ -1,0 +1,20 @@
+h2 {
+  color: white;
+  background-color: green;
+  text-align: center;
+  font-size: 1.7em;
+  padding: 0.3em;
+
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 0.3em;
+}
+
+button {
+  background-color: darkorange;
+  color: white;
+}

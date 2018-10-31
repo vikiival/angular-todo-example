@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutingModule } from './app.routes';
-import { MatButtonModule, MatInputModule, MatListModule, MatRadioModule } from '@angular/material';
+import { MAT_DIALOG_DATA, MatButtonModule, MatDialogRef, MatInputModule, MatListModule, MatRadioModule } from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -27,6 +28,7 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
+import { AddItemComponent } from './add-item/add-item.component';
 
 
 const DesignModules = [
@@ -40,7 +42,8 @@ const DesignModules = [
   MatSelectModule,
   MatSidenavModule,
   MatIconModule,
-  MatMenuModule
+  MatMenuModule,
+  MatDialogModule
 ];
 
 @NgModule({
@@ -56,7 +59,8 @@ const DesignModules = [
     ListItemComponent,
     SearchPanelComponent,
     ItemDetailComponent,
-    MenuItemComponent
+    MenuItemComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -68,8 +72,17 @@ const DesignModules = [
     StoreModule.forRoot(reducers, { metaReducers }),
     StoreDevtoolsModule.instrument({ maxAge: 25 }) //  Retains last 25 states
   ],
+  entryComponents: [
+    AddItemComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    {provide: MatDialogRef, useValue: {}},
+    {
+      provide: MAT_DIALOG_DATA,
+      useValue: null
+    }
+  ],
   exports: [
     DesignModules,
   ],

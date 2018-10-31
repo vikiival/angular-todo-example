@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Category } from '../../lib/mockItems';
+import { MatDialog } from '@angular/material/dialog';
+import { AddItemComponent } from '../add-item/add-item.component';
 
 @Component({
   selector: 'app-welcome',
