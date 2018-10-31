@@ -7,15 +7,17 @@ import {localStorageSync} from 'ngrx-store-localstorage';
 export interface State {
   todos: fromTodo.State;
   data: fromData.State;
+  user: fromLogin.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
   todos: fromTodo.todoReducer,
   data: fromData.reducer,
+  user: fromLogin.reducer,
 };
 
 export const synchronizedReducers = [
-  'todos',
+  'user',
 ];
 
 export function localStorageSyncReducer(reducer: ActionReducer<State>): ActionReducer<State> {

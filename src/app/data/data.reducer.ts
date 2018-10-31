@@ -43,10 +43,12 @@ export function reducer(
       };
 
     case dataActions.ADD_ITEM:
-      const results = action.payload;
+      const newItem: Item = action.payload;
 
       return {
         ...state,
+        searchedItems: [],
+        items: [...state.items, newItem]
       };
 
     default: {

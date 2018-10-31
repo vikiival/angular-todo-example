@@ -13,6 +13,7 @@ export interface User {
   email: string;
   phone: string;
   password: string;
+  photo: string;
 }
 
 export interface Item {
@@ -52,6 +53,7 @@ export const mockUsers: Array<User> = [
     name: 'Jozefina',
     email: 'jozefina@sused.com',
     password: 'jozefina',
-    phone: '+421 999 666 555'
+    phone: '+421 999 666 555',
+    photo: '../../assets/users/jozefina.jpg',
   }
 ];

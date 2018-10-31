@@ -1,22 +1,30 @@
-import { USERS } from '../../common/mockedData';
 import * as LoginActions from './login.actions';
-import {LoginModel} from './login.interface';
+import { mockUsers, User } from '../../lib/mockItems';
+import { LOGIN, LOGOUT } from './login.actions';
 
 export interface State {
-  name: string;
-  password: string;
+  users: Array<User>;
+  selectedUser: User;
 }
 
 const defaultState: State = {
-  name: '',
-  password: ''
+  users: mockUsers,
+  selectedUser: null
 };
 
-export function loginReducer(state: State = defaultState, action: LoginActions.Actions) {
+export function reducer(state: State = defaultState, action: LoginActions.Actions) {
   console.log(action);
   switch (action.type) {
-    case 'LOGIN':
-      return action.payload;
+    case LOGIN:
+      return {
+        ...state,
+        selectedUser: state.users.find(user => user.name === action.payload.userName && user.password === action.payload.password)
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        selectedUser: null
+      };
     default:
       return state;
   }

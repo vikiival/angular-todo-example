@@ -1,17 +1,16 @@
-<form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-  <div class="content-wrapper">
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Username" formControlName="userName">
-    </mat-form-field>
-    <mat-form-field class="full-width">
-      <input type="password" matInput placeholder="Password" formControlName="password">
-    </mat-form-field>
+<mat-card>
+  <form [formGroup]="loginForm" (submit)="submitLogin()">
+    <div class="content-wrapper">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Meno" formControlName="userName">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Heslo" formControlName="password">
+      </mat-form-field>
 
-    <div class="login-actions">
-      <button type="submit" mat-raised-button>Login</button>
+      <div class="login-actions">
+        <button type="submit" mat-raised-button>Prihlasit sa</button>
+      </div>
     </div>
-    <div>
-      {{ loggedUser$.userName }}
-    </div>
-  </div>
-</form>
+  </form>
+</mat-card>
