@@ -44,6 +44,15 @@ export const mockItems: Array<Item> = [
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
     region: 'trencin'
+  },
+  {
+    id: '66b739dc-71eb-47d6-a182-56c2e8dbdafc',
+    category: Category.IT,
+    title: 'Oprava osobnych pocitacov',
+    text: 'Seruste mam 30 rokov skusenosti s opravovanim strojov, preinstalovat , vyfukat prach, neni problem',
+    userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
+    photo: '../../assets/users/monika.jpg',
+    region: 'kosice'
   }
 ];
 
