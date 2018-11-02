@@ -18,6 +18,7 @@ export const reducers: ActionReducerMap<State> = {
 
 export const synchronizedReducers = [
   'user',
+  'data'
 ];
 
 export function localStorageSyncReducer(reducer: ActionReducer<State>): ActionReducer<State> {

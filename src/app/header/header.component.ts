@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AddItemComponent } from '../add-item/add-item.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,10 @@ import { AddItemComponent } from '../add-item/add-item.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -17,6 +21,10 @@ export class HeaderComponent implements OnInit {
   addItem() {
     console.log('create Item');
     this.dialog.open(AddItemComponent);
+  }
+
+  navigateTo(path) {
+    this.router.navigate(['/']);
   }
 
 }

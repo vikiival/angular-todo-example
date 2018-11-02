@@ -55,5 +55,30 @@ export const mockUsers: Array<User> = [
     password: 'jozefina',
     phone: '+421 999 666 555',
     photo: '../../assets/users/jozefina.jpg',
-  }
+  },
+  {
+    id: '63cad2f2-4138-4763-9783-aaff6a53b586',
+    name: 'Maros',
+    email: 'maro555@gmail.com',
+    password: 'jozefina',
+    phone: '+421 999 666 555',
+    photo: '../../assets/users/maros.jpg',
+  },
+  {
+    id: '4a4fd8d2-1b36-415d-804d-a980e6973336',
+    name: 'Monika',
+    email: 'jozefina@sused.com',
+    password: 'jozefina',
+    phone: '+421 999 666 555',
+    photo: '../../assets/users/monika.jpg',
+  },
+  {
+    id: '16ea0108-84aa-4693-afe6-da850ea61d86',
+    name: 'Pavol',
+    email: 'jozefina@sused.com',
+    password: 'jozefina',
+    phone: '+421 999 666 555',
+    photo: '../../assets/users/pavol.jpg',
+  },
+  
 ];
