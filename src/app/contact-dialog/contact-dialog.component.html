@@ -1,0 +1,22 @@
+<h2 class="mat-h2 add-item-title">Kontakt</h2>
+<div *ngIf="!wasButtonClicked" class="contact-form">
+  <mat-form-field>
+    <input matInput placeholder="Zadaj kontaktny email" [(ngModel)]="contactEmail">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Pridaj otazku" [(ngModel)]="contactText">
+    </textarea>
+  </mat-form-field>
+  <button mat-raised-button (click)="toggleContact()" [disabled]="!contactEmail">Kontaktuj</button>
+</div>
+
+<div *ngIf="wasButtonClicked" class="contact-thank-panel">
+  <h3 class="mat-h3 h3-bold contact-thank-title">Dakujem za kontaktovanie ❤️</h3>
+
+  <div>
+    <h3 class="mat-h3">Coskoro sa vam ozvem na email:</h3>
+    <h3 class="mat-h3 h3-bold">{{contactEmail}}</h3>
+  </div>
+
+  <button mat-raised-button (click)="close()">Spat na ponuku</button>
+</div>

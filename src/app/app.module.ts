@@ -29,6 +29,7 @@ import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { AddItemComponent } from './add-item/add-item.component';
+import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
 
 
 const DesignModules = [
@@ -60,7 +61,8 @@ const DesignModules = [
     SearchPanelComponent,
     ItemDetailComponent,
     MenuItemComponent,
-    AddItemComponent
+    AddItemComponent,
+    ContactDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,8 @@ const DesignModules = [
     StoreDevtoolsModule.instrument({ maxAge: 25 }) //  Retains last 25 states
   ],
   entryComponents: [
-    AddItemComponent
+    AddItemComponent,
+    ContactDialogComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

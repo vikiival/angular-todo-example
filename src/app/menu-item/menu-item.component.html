@@ -1,5 +1,5 @@
 <button mat-button [matMenuTriggerFor]="menu">{{menuName}}</button>
-<mat-menu #menu="matMenu">
+<mat-menu #menu="matMenu" xPosition="before" [overlapTrigger]="false">
   <div *ngFor="let item of items">
     <button mat-menu-item>{{item}}</button>
   </div>

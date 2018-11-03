@@ -13,10 +13,13 @@
 h1 {
   font-size: 2em;
   font-weight: bold;
+  color: darkgreen;
+  text-align: center;
+  padding-top: 1em;
 }
 
 h2 {
-  background-color: green;
+  background-color: darkgreen;
   color: white;
   text-align: center;
   padding: 0.3em;

@@ -22,7 +22,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   scroll(el) {
-    el.scrollIntoView();
+    el.scrollIntoView({behavior: 'smooth'});
   }
 
   getCategory(category: string): Category {
