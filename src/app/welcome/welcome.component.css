@@ -37,10 +37,8 @@
 
 
 .mat-card {
-  width: 35%;
+  width: 30%;
   margin: auto;
-  display: flex;
-  justify-content: space-between;
 }
 
 .divider {
