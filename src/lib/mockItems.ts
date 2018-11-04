@@ -118,6 +118,24 @@ export const mockItems: Array<Item> = [
     region: 'Pezinok'
   },
   {
+    id: '0ea5bfee-feb9-409f-ba44-c9f913d3b3e5',
+    category: Category.HOUSE,
+    title: 'Darujem taniere',
+    text: 'Mam nazvys taniere. Ak by niekto potreboval ozvite sa, darujem.',
+    userId: 'e297073b-52ac-4444-a6c0-db59d980b09e'',
+    photo: '../../assets/users/jozefina.jpg',
+    region: 'Igram'
+  },
+  {
+    id: '16e21604-f755-40d6-8b4c-7b277f1062ac',
+    category: Category.HOUSE,
+    title: 'Pozicia niekto dvojplatnicku?',
+    text: 'Ahojte, potreboval by som pozicat na dva tyzdne dvojplatnicku. Ma niekto?',
+    userId: '16ea0108-84aa-4693-afe6-da850ea61d86'',
+    photo: '../../assets/users/pavol.jpg',
+    region: 'Igram'
+  },
+  {
     id: '66b739dc-71eb-47d6-a182-56c2e8dbdafc',
     category: Category.IT,
     title: 'Oprava osobnych pocitacov',
@@ -197,7 +215,7 @@ export const mockItems: Array<Item> = [
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
     region: 'Trnava'
-  },
+  }
 ];
 
 export const mockUsers: Array<User> = [
