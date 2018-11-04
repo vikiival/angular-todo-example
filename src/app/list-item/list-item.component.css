@@ -1,6 +1,6 @@
 .example-card {
-  max-width: 940px;
-  max-height: 273px;
+  width: 900px;
+  height: 150px;
   padding-bottom: 0;
   margin: 1em 0;
 }
@@ -12,6 +12,7 @@
 
 mat-card-content {
   margin-left: 45px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -22,6 +23,12 @@ mat-card-content {
 }
 
 img {
-  max-height: 290px;
-  max-width: 290px;
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 150px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 12px;
 }
