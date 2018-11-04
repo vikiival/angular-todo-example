@@ -1,32 +1,74 @@
 <div class="item-detail-wrapper">
   <mat-card class="example-card">
     <div class="wrapper">
-      <div>
+      <div id="userPhoto">
         <img mat-card-image [src]="item.photo" alt="User image">
       </div>
       <mat-card-content>
-        <div>
+        <div id="hlavickaPonuky">
           <h1>{{item.title}}</h1>
           {{item.text}}
         </div>
-        <div>
-          <p>{{selectedUser.name}}</p>
-          <p>{{selectedUser.phone}}</p>
-          <p>{{selectedUser.email}}</p>
-          <mat-card-actions>
-            <button mat-button class="list-item-button" (click)="openContactDialog()">Kontaktuj</button>
-          </mat-card-actions>
+        <div id="userInfo">
+          <p id="name">{{selectedUser.name}}</p>
+          <p>Telefón: {{selectedUser.phone}}</p>
+          <p>Mail: {{selectedUser.email}}</p>
+          <p>Adresa: </p>
         </div>
       </mat-card-content>
-
+      <mat-card-actions>
+        <button mat-button class="list-item-button">Všetky ponuky používateľa</button>
+        <button mat-button class="list-item-button" (click)="openContactDialog()">Kontaktuj</button>
+      </mat-card-actions>
     </div>
   </mat-card>
 
-  <mat-card class="example-card">
-    <mat-card-content>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+  <mat-card class="example-card" id="popisPonuky">
+    <h3>Popis ponuky</h3>
+    <p>The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
       A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </mat-card-content>
+      bred for hunting. NANANANANANA BATMAN!!!!</p>
+    <br>
+  </mat-card>
+
+  <mat-card class="example-card" id="podobnePonuky">
+    <h3>Podobné ponuky</h3>
+    <div id="ponuky">
+      <img src="../../assets/image-placeholder.png">
+      <img src="../../assets/image-placeholder.png">
+      <img src="../../assets/image-placeholder.png">
+      <img src="../../assets/image-placeholder.png">
+    </div>
+  </mat-card>
+
+  <mat-card class="example-card" id="komentare">
+    <h2>Komentáre</h2>
+    <div class="komentar">
+      <div class="hlavickaKoment">
+        <h3>Meno Priezvisko</h3>
+        &hearts;&hearts;&hearts;&hearts;
+      </div>
+      <div class="popisKomentar">
+        asdasdasdasdasdadadadasdadasdasdadasda
+      </div>
+    </div>
+    <div class="komentar">
+      <div class="hlavickaKoment">
+        <h3>Meno Priezvisko</h3>
+        &hearts;&hearts;&hearts;&hearts;
+      </div>
+      <div class="popisKomentar">
+        asdasdasdasdasdadadadasdadasdasdadasda
+      </div>
+    </div>
+    <div class="komentar">
+      <div class="hlavickaKoment">
+        <h3>Meno Priezvisko</h3>
+        &hearts;&hearts;&hearts;&hearts;
+      </div>
+      <div class="popisKomentar">
+        asdasdasdasdasdadadadasdadasdasdadasda
+      </div>
+    </div>
   </mat-card>
 </div>
