@@ -4,10 +4,11 @@
   </mat-form-field>
   <mat-form-field>
     <mat-select [(value)]="selectedArea" placeholder="Vyber si kraj">
-      <mat-option>None</mat-option>
+      <mat-option>Ziaden</mat-option>
       <mat-option value="bratislava">Bratislava</mat-option>
       <mat-option value="kosice">Kosice</mat-option>
       <mat-option value="trencin">Trencin</mat-option>
+      <mat-option value="pezinok">Pezinok</mat-option>
     </mat-select>
   </mat-form-field>
   <button mat-raised-button (click)="activateSearch()" [disabled]="!searchedText">Hladaj</button>

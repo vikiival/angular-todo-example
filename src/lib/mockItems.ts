@@ -34,7 +34,7 @@ export const mockItems: Array<Item> = [
     text: 'Seruste,keby niekto potreboval pokosit travnik som k dispozicii.',
     userId: '16ea0108-84aa-4693-afe6-da850ea61d86',
     photo: '../../assets/users/pavol.jpg',
-    region: 'Limbach'
+    region: 'trencin'
   },
   {
     id: 'e297073b-52ac-4444-a6c0-db59d980b09e',
@@ -43,7 +43,7 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte, je tu niekto kto by mi vedel ostrihať stromy a zivy plot? Najlepsie uz tuto sobotu.',
     userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: '15a5724b-1942-4ad8-a9f1-89d37fd31da1',
@@ -52,7 +52,7 @@ export const mockItems: Array<Item> = [
     text: 'Mam na zvys kompost. Keby niekto potreboval pohnojit zahradku, kludne sa ozvite.',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   },
   {
     id: '19246743-bd20-43d4-847e-a0fec55eb277',
@@ -61,7 +61,7 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte. Potrebovala by som poradit, ktore kvetinky dlho vydrzia a ako ich spravne sadit. Keby mal niekto cas bola by som velmi povdacna.',
     userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
     photo: '../../assets/users/monika.jpg',
-    region: 'Pezinok'
+    region: 'pezinok'
   },
   {
     id: '99483867-e91f-43a2-b9e7-5f5573749b4d',
@@ -70,7 +70,7 @@ export const mockItems: Array<Item> = [
     text: 'Poradte prosim, som zufaly. Kam s detmi takto na jesen?',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   },
   {
     id: '64376b85-ddda-4aa3-9507-f046461afe2a',
@@ -79,7 +79,7 @@ export const mockItems: Array<Item> = [
     text: 'Zdravim, potrebovali by sme postrazit v piatok 20.10. dve male dievcatka. Su uplne bezproblemove. Nasiel by sa niekto?',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   },
   {
     id: 'f827ab07-07af-445d-a008-8fc23338d60c',
@@ -88,7 +88,7 @@ export const mockItems: Array<Item> = [
     text: 'Ak mate deticky a nechcete ich nechat same kludne pozstrazim. Mam cas skoro stale.',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: '9a2f77e3-bba1-42c1-847a-33bb41d62e65',
@@ -97,7 +97,7 @@ export const mockItems: Array<Item> = [
     text: 'Ak by si si dal kolacik rada upeciem, rozne druhy',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: 'd3fd71ce-ced2-44af-9f50-507df82b50f4',
@@ -106,7 +106,7 @@ export const mockItems: Array<Item> = [
     text: 'Pekny den prajem. Potrebovala by som pomoct s upratovanim v dome, lebo uz nevladzem. Hlavne okna by som potrebovala umyt.',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: 'ab618bc5-b970-40d4-9def-f82df4ecfa4f',
@@ -115,25 +115,25 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte, pokazila sa mi pracka a potrebovala by som si oprat veci. Mohla by som si k niekomu prist oprat? Velmi by mi to pomohlo.',
     userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
     photo: '../../assets/users/monika.jpg',
-    region: 'Pezinok'
+    region: 'pezinok'
   },
   {
     id: '0ea5bfee-feb9-409f-ba44-c9f913d3b3e5',
     category: Category.HOUSE,
     title: 'Darujem taniere',
     text: 'Mam nazvys taniere. Ak by niekto potreboval ozvite sa, darujem.',
-    userId: 'e297073b-52ac-4444-a6c0-db59d980b09e'',
+    userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: '16e21604-f755-40d6-8b4c-7b277f1062ac',
     category: Category.HOUSE,
     title: 'Pozicia niekto dvojplatnicku?',
     text: 'Ahojte, potreboval by som pozicat na dva tyzdne dvojplatnicku. Ma niekto?',
-    userId: '16ea0108-84aa-4693-afe6-da850ea61d86'',
+    userId: '16ea0108-84aa-4693-afe6-da850ea61d86',
     photo: '../../assets/users/pavol.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: '66b739dc-71eb-47d6-a182-56c2e8dbdafc',
@@ -142,7 +142,7 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte mam niekolko rokov skusenosti s opravovanim pocitacov. Preinstalovat , vyfukat prach, nie je problem.',
     userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
     photo: '../../assets/users/monika.jpg',
-    region: 'Pezinok'
+    region: 'pezinok'
   },
   {
     id: 'a21085a2-32dd-4a9f-93d9-6180ba0834f4',
@@ -151,7 +151,7 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte susedia, kupila som si novy pocitac a neviem ho zapnut. Vedel by mi s tym niekto pomoct?',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: 'a21085a2-32dd-4a9f-93d9-6180ba0834f4',
@@ -160,7 +160,7 @@ export const mockItems: Array<Item> = [
     text: 'Zdravim vsetkych. Zhanam niekoho kto by pomohol mojim detom s domacou ulohou z programovania.',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   },
   {
     id: 'fa1590e8-29ef-4329-98e0-af3c4e50d055',
@@ -168,8 +168,8 @@ export const mockItems: Array<Item> = [
     title: 'Grilovacka',
     text: 'Zajtra hlasia krasne pocasie. Co takto si spravit susedsku grilovacku. Kto sa prida?',
     userId: '16ea0108-84aa-4693-afe6-da850ea61d86',
-    photo: '../../assets/users/pavol.jpg',
-    region: 'Limbach'
+    photo: '../..pezinok/users/pavol.jpg',
+    region: 'trencin'
   },
   {
     id: 'fa1590e8-29ef-4329-98e0-af3c4e50d055',
@@ -178,7 +178,7 @@ export const mockItems: Array<Item> = [
     text: 'Zdravim vsetkych rodicov, tento vikend organizujeme detsku party pri bazene. Kto ma male deti kludne pridte, vsetci su vitani.',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   },
   {
     id: '66fde54b-d048-4b7e-ad6a-50f7dc4dc315',
@@ -187,7 +187,7 @@ export const mockItems: Array<Item> = [
     text: 'Co poviete na cyklisticku turu? Tuto sobotu. Islo by sa k priehrade a mohli by sme si spravit aj piknik.',
     userId: '4a4fd8d2-1b36-415d-804d-a980e6973336',
     photo: '../../assets/users/monika.jpg',
-    region: 'Pezinok'
+    region: 'pezinok'
   },
   {
     id: 'f10ac53a-9575-44fe-bb27-27741f828f8d',
@@ -196,7 +196,7 @@ export const mockItems: Array<Item> = [
     text: 'Surne. Potrebovala by som opravit strechu. Strasne mi zateka do domu. Ak by mal niekto cas, prosim kontaktujte ma.',
     userId: 'e297073b-52ac-4444-a6c0-db59d980b09e',
     photo: '../../assets/users/jozefina.jpg',
-    region: 'Igram'
+    region: 'bratislava'
   },
   {
     id: '161e4178-3dd7-41f0-bcae-e2628bbcfea3',
@@ -205,7 +205,7 @@ export const mockItems: Array<Item> = [
     text: 'Ahojte susedia. Ak by potreboval ktokolvek cokolvek opravit ozvite sa.',
     userId: '16ea0108-84aa-4693-afe6-da850ea61d86',
     photo: '../../assets/users/pavol.jpg',
-    region: 'Limbach'
+    region: 'trencin'
   },
   {
     id: '3bf46c05-7ccc-417b-a68f-266004b97f31',
@@ -214,7 +214,7 @@ export const mockItems: Array<Item> = [
     text: 'Zdravim, som vyuceny murar a rad by som pomohol tomu kto bude potrebovat. Pomozem predovsetkym so stavebnymi pracami.',
     userId: '63cad2f2-4138-4763-9783-aaff6a53b586',
     photo: '../../assets/users/maros.jpg',
-    region: 'Trnava'
+    region: 'trencin'
   }
 ];
 
