@@ -1,0 +1,9 @@
+.search-panel-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+h4 {
+  color: darkgreen;
+}

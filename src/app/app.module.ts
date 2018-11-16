@@ -30,6 +30,7 @@ import { ItemDetailComponent } from './item-detail/item-detail.component';
 import { MenuItemComponent } from './menu-item/menu-item.component';
 import { AddItemComponent } from './add-item/add-item.component';
 import { ContactDialogComponent } from './contact-dialog/contact-dialog.component';
+import { FilterListComponent } from './filter-list/filter-list.component';
 
 
 const DesignModules = [
@@ -62,7 +63,8 @@ const DesignModules = [
     ItemDetailComponent,
     MenuItemComponent,
     AddItemComponent,
-    ContactDialogComponent
+    ContactDialogComponent,
+    FilterListComponent
   ],
   imports: [
     BrowserModule,

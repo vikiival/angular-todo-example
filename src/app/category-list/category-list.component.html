@@ -5,6 +5,9 @@
     <mat-card class="search-panel">
       <app-search-panel></app-search-panel>
     </mat-card>
+    <mat-card class="search-panel">
+      <app-filter-list></app-filter-list>
+    </mat-card>
     <div *ngFor="let item of data">
       <app-list-item [item]="item"></app-list-item>
     </div>

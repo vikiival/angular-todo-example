@@ -1,0 +1,18 @@
+<div class="search-panel-wrapper">
+  <h4>Zobrazit podla</h4>
+  <mat-form-field>
+    <mat-select [(value)]="selectedSort" placeholder="">
+      <mat-option value="1">Oblubenosti</mat-option>
+      <mat-option value="2">Relevancie</mat-option>
+      <mat-option value="3">Casu pridania</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <h4>Zobrazit</h4>
+  <mat-form-field >
+    <mat-select [(value)]="selectedType" placeholder="">
+      <mat-option value="1">Ponuku aj Dopyt</mat-option>
+      <mat-option value="2">Ponuku</mat-option>
+      <mat-option value="3">Dopyt</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
