@@ -1,8 +1,8 @@
 <div class="search-panel-wrapper">
   <mat-form-field>
-    <input matInput placeholder="Zacni hladat tu" [(ngModel)]="searchedText">
+    <input matInput placeholder="Zadaj poziadavku" [(ngModel)]="searchedText">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field *ngIf="!isAreaHidden">
     <mat-select [(value)]="selectedArea" placeholder="Vyber si kraj">
       <mat-option>Ziaden</mat-option>
       <mat-option value="bratislava">Bratislava</mat-option>

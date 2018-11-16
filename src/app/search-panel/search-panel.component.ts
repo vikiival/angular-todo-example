@@ -16,6 +16,7 @@ interface AppState {
 export class SearchPanelComponent implements OnInit {
   selectedArea: string;
   searchedText: string;
+  isAreaHidden = true;
 
   constructor(
     private router: Router,
@@ -23,6 +24,7 @@ export class SearchPanelComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isAreaHidden = this.router.url === '/';
   }
 
   activateSearch() {

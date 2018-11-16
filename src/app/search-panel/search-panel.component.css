@@ -7,6 +7,14 @@
 
 .search-panel-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: auto;
+}
+
+mat-form-field {
+  width: 15em;
+}
+
+button {
+  width: 15em;
 }
