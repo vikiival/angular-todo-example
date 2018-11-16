@@ -2,6 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { AddItemComponent } from '../add-item/add-item.component';
 import { Router } from '@angular/router';
+import { State as UserState } from '../login/login.reducer';
+import { Store } from '@ngrx/store';
+import { User } from '../../lib/mockItems';
+
+
+interface AppState {
+  user: UserState;
+}
+
 
 @Component({
   selector: 'app-header',
@@ -9,11 +18,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  selectedUser: User;
 
   constructor(
     public dialog: MatDialog,
-    private router: Router
-    ) { }
+    private router: Router,
+    private store: Store<AppState>,
+    ) {
+    this.store.select('user').subscribe(user => {
+      this.selectedUser = user.selectedUser;
+    });
+  }
 
   ngOnInit() {
   }
@@ -24,7 +39,7 @@ export class HeaderComponent implements OnInit {
   }
 
   navigateTo(path) {
-    this.router.navigate(['/']);
+    this.router.navigate([path]);
   }
 
 }

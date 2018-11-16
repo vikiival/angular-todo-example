@@ -15,4 +15,7 @@ mat-toolbar {
   background-color: darkorange;
 }
 
+button {
+  margin-right: 1em;
+}
 
