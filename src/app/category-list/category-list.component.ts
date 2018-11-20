@@ -3,6 +3,8 @@ import { State } from '../data/data.reducer';
 import { Store } from '@ngrx/store';
 import { Item } from '../../lib/mockItems';
 import { Router } from '@angular/router';
+import { AddItemComponent } from '../add-item/add-item.component';
+import { MatDialog } from '@angular/material';
 
 interface AppState {
   data: State;
@@ -17,6 +19,7 @@ export class CategoryListComponent implements OnInit {
   data: Item[] = [];
 
   constructor(
+    public dialog: MatDialog,
     private router: Router,
     private store: Store<AppState>,
   ) {
@@ -24,6 +27,10 @@ export class CategoryListComponent implements OnInit {
       console.log('this.router.url', this.router.url);
       this.data = data.searchedItems ? data.searchedItems : [];
     });
+  }
+
+  openDialog() {
+    this.dialog.open(AddItemComponent);
   }
 
 
