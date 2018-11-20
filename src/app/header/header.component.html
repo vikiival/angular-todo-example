@@ -1,7 +1,10 @@
 <mat-toolbar>
   <span (click)="navigateTo('/')">Sused</span>
   <span class="example-spacer"></span>
-  <button mat-button class="example-icon" (click)="addItem()">Pridaj Ponuku</button>
+  <button mat-button class="example-icon" (click)="addItem()">
+    <mat-icon >plus_one</mat-icon>
+    Pridaj Ponuku
+  </button>
   <span *ngIf="selectedUser; else loggedOut" (click)="navigateTo('/')">Ahoj, {{selectedUser.name}}</span>
 </mat-toolbar>
 

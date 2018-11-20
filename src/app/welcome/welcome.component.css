@@ -13,6 +13,14 @@
   margin-bottom: 14px;
 }
 
+.welcome-image-description-text {
+  margin: auto;
+  color: darkgreen;
+  font-size: 1.5em;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
 .welcome-image-button-scroll {
   display: block;
   position: relative;
@@ -20,6 +28,7 @@
   top: 460px;
   background-color: darkorange;
   color: white;
+  font-weight: bold;
 }
 
 .welcome-image-inside-wrapper {

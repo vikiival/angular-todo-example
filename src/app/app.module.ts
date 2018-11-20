@@ -2,13 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutingModule } from './app.routes';
-import { MAT_DIALOG_DATA, MatButtonModule, MatDialogRef, MatInputModule, MatListModule, MatRadioModule } from '@angular/material';
+import {
+  MAT_DIALOG_DATA,
+  MatButtonModule,
+  MatDialogRef,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatRadioModule
+} from '@angular/material';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
+// import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
