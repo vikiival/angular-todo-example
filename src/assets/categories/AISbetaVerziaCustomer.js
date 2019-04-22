@@ -1,13 +1,21 @@
-/*BETA DESIGN*/
+/**
+ * Užívateľské nastavenie
+ * pathToJson - cesta k JSON suboru s tutorialmi
+ * headlineGuide - nápis na bočnom paneli
+ * farbaPanelu - farba bočného panelu
+ * @type {string}
+ */
 
+const pathToJson = 'assets/categories/ais_krok.json';
+const headlineGuide = 'Tutoriály pre stránku is.stuba.sk';
+const farbaPanelu = '#006401';
+
+let tutorialsJSON;
 //NACITAJ JSON https://codepen.io/KryptoniteDove/post/load-json-file-locally-using-pure-javascript
-
-var krokJSON;
-
 function loadJSON(callback) {
-    var xobj = new XMLHttpRequest();
+    let xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'assets/categories/sused.json', false); // Replace 'my_data' with the path to your file
+    xobj.open('GET', pathToJson, false); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -19,14 +27,17 @@ function loadJSON(callback) {
 
 loadJSON(function (response) {
     // Parse JSON string into object
-    krokJSON = JSON.parse(response);
+    tutorialsJSON = JSON.parse(response);
+    if (tutorialsJSON.tutorialy === undefined) {
+        tutorialsJSON['tutorialy'] = [];
+    }
 });
 
 
-var cssTutorial = 'cssTutorial';
+const cssTutorial = 'cssTutorial';
 if (!document.getElementById(cssTutorial)) {
-    var head = document.getElementsByTagName('head')[0];
-    var link = document.createElement('link');
+    const head = document.getElementsByTagName('head')[0];
+    const link = document.createElement('link');
     link.id = cssTutorial;
     link.rel = 'stylesheet';
     link.type = 'text/css';
@@ -35,52 +46,57 @@ if (!document.getElementById(cssTutorial)) {
     head.appendChild(link);
 }
 
-var sidePanelTutorial = document.createElement('div');
-var helperLayer = document.createElement('div');
-var fadeLayer = document.createElement('div');
-var fadeLayerLeft = document.createElement('div');
-var fadeLayerTop = document.createElement('div');
-var fadeLayerRight = document.createElement('div');
-var fadeLayerBottom = document.createElement('div');
-var sidePanel = document.createElement('div');
-var sidePanelHeadline = document.createElement('h1');
-var sidePanelMain = document.createElement('div');
-var sidePanelPopis = document.createElement('p');
-var sidePanelZoznam = document.createElement('ol');
-var sidePanelZobraz = document.createElement('p');
-var sidePanelTutorialHeadline = document.createElement('p');
-var guideButton = document.createElement('div');
-var krokyTutorialu;
-var aktualnyKrok = 0;
-var aktualnyTutorial;
+const fadeLayer = document.createElement('div');
+const fadeLayerBottom = document.createElement('div');
+const fadeLayerLeft = document.createElement('div');
+const fadeLayerRight = document.createElement('div');
+const fadeLayerTop = document.createElement('div');
+const guideButton = document.createElement('div');
+const helperLayer = document.createElement('div');
+const sidePanel = document.createElement('div');
+const sidePanelHeadline = document.createElement('h1');
+const sidePanelMain = document.createElement('div');
+const sidePanelPopis = document.createElement('p');
+const sidePanelTutorial = document.createElement('div');
+const sidePanelTutorialHeadline = document.createElement('p');
+const sidePanelZoznam = document.createElement('ol');
+const ukoncitTutorialButton = document.createElement('button');
+let krokyTutorialu;
+let aktualnyKrok = 0;
+let aktualnyTutorial;
+let parent_position;
 
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 }
 
 function createNav(text, element) {
-
     try {
-        //NAVIGACIA
-        var container = document.createElement('div');
-        var borderNav = document.createElement('div');
-        var textBlock = document.createElement('div');
-        var spatButton = document.createElement('button');
-        var nextButton = document.createElement('button');
-        var parent_position = element.getBoundingClientRect();
+        const container = document.createElement('div');
+        const borderNav = document.createElement('div');
+        const textBlock = document.createElement('div');
+        const spatButton = document.createElement('button');
+        const nextButton = document.createElement('button');
+        let styleText;
+        parent_position = element.getBoundingClientRect();
 
+        const marginTopContainer = -70;
 
         container.className = "krokContainer";
+        container.style.marginTop = (marginTopContainer) + 'px';
         styleText = 'top: ' + (parent_position.top + window.pageYOffset) + 'px; left: ' + (parent_position.left + window.pageXOffset) + 'px;';
         container.style.cssText += styleText;
         helperLayer.appendChild(container);
+
+        /*let containerPosition = container.getBoundingClientRect();
+        console.log(containerPosition);*/
 
         borderNav.className = 'borderNav';
         borderNav.style.cssText += 'display: initial; width: ' + (parent_position.width + 10) + 'px; height:' + (parent_position.height + 10) + 'px; top: ' + ((parent_position.top + window.pageYOffset) - 5) + 'px; left: ' + ((parent_position.left + window.pageXOffset) - 5) + 'px; ';
         helperLayer.appendChild(borderNav);
 
         fadeLayer.className = 'fadeLayer';
-         styleText = 'display: initial; height:' + document.documentElement.scrollHeight + 'px;';
+        styleText = 'display: initial; height:' + document.documentElement.scrollHeight + 'px;';
         fadeLayer.style.cssText += styleText;
         document.body.appendChild(fadeLayer);
 
@@ -90,48 +106,82 @@ function createNav(text, element) {
         fadeLayer.appendChild(fadeLayerTop);
 
         fadeLayerLeft.className = 'fadeLayerLeft';
-        styleText = 'display: initial; top: ' + ((((parent_position.top ) - 5)) + window.pageYOffset) + 'px; left: 0; height: ' + (parent_position.height + 12) + 'px; width:' + (((parent_position.left ) - 5) + window.pageXOffset) + 'px;';
+        styleText = 'display: initial; top: ' + ((((parent_position.top) - 5)) + window.pageYOffset) + 'px; left: 0; height: ' + (parent_position.height + 12) + 'px; width:' + (((parent_position.left) - 5) + window.pageXOffset) + 'px;';
         fadeLayerLeft.style.cssText += styleText;
         fadeLayer.appendChild(fadeLayerLeft);
 
         fadeLayerRight.className = 'fadeLayerRight';
-        styleText = 'display: initial; top: ' + (((parent_position.top) - 5) + window.pageYOffset) + 'px;left: ' + (((parent_position.right)+10) + window.pageXOffset) + 'px; width: 100%;height: ' + (parent_position.height + 12) + 'px;';
+        styleText = 'display: initial; top: ' + (((parent_position.top) - 5) + window.pageYOffset) + 'px;left: ' + (((parent_position.right) + 10) + window.pageXOffset) + 'px; width: 100%;height: ' + (parent_position.height + 12) + 'px;';
         fadeLayerRight.style.cssText = styleText;
         fadeLayer.appendChild(fadeLayerRight);
 
         fadeLayerBottom.className = 'fadeLayerBottom';
-        styleText = 'display: initial; top: ' + (((parent_position.bottom)+7) + window.pageYOffset) + 'px;';
+        styleText = 'display: initial; top: ' + (((parent_position.bottom) + 7) + window.pageYOffset) + 'px;';
         fadeLayerBottom.style.cssText = styleText;
         fadeLayer.appendChild(fadeLayerBottom);
 
         container.appendChild(textBlock);
         textBlock.className = "textBlock";
 
-        var para = document.createElement("p");
-        var node = document.createTextNode(text);
+        const para = document.createElement("p");
+        const node = document.createTextNode(text);
         para.appendChild(node);
         textBlock.appendChild(para);
 
-        if (krokJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok].krokovatel === "1") {
-            //console.log(window.getComputedStyle(document.getElementsByClassName('krokContainer')[0]).marginTop);
+
+         /*containerPosition = container.getBoundingClientRect();
+        console.log(containerPosition);*/
+
+
+        if (tutorialsJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok].krokovatel === 1) {
             container.style.marginTop = (parseInt(window.getComputedStyle(document.getElementsByClassName('krokContainer')[0]).marginTop) - 30) + "px";
             spatButton.className = 'spatButton';
             nextButton.className = 'nextButton';
             spatButton.textContent = "Spat";
             nextButton.textContent = "Next";
+            if((aktualnyKrok === 0) || tutorialsJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok-1].multipage ===1 )
+                spatButton.style.display = 'none';
+            if((aktualnyKrok === tutorialsJSON.tutorialy[aktualnyTutorial].kroky.length-1))
+                nextButton.style.display = 'none';
             textBlock.appendChild(spatButton);
             textBlock.appendChild(nextButton);
+
+            spatButton.onclick = function () {
+                spatKrok(aktualnyTutorial);
+            };
+            nextButton.onclick = function () {
+                nextKrok(aktualnyTutorial);
+            };
         }
 
-        if (krokJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok].multipage === "1") {
-            sessionStorage.setItem("krok", ++aktualnyKrok);
+        let containerPosition = container.getBoundingClientRect();
+        container.style.display='none';
+
+        if (tutorialsJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok].multipage === 1) {
+            sessionStorage.setItem("krok", (parseInt(aktualnyKrok)+1).toString());
             sessionStorage.setItem("tutorial", aktualnyTutorial);
         } else sessionStorage.clear();
 
+        //setTimeout(function () {
+        const positionFromJson = tutorialsJSON.tutorialy[aktualnyTutorial].kroky[aktualnyKrok].position;
+        if (positionFromJson === "right") {
+            container.style.margin = "0px 0px 0px " + (parent_position.width + (containerPosition.width / 4)) + "px";
+        }
+        if (positionFromJson === "left") {
+            container.style.margin = "0px 0px 0px  " + (-containerPosition.width - 20) + "px";
+        }
+        if (positionFromJson === "top") {
+            container.style.margin = (-(containerPosition.height + 20)) + "px 0px 0px 0px";
+        }
+        if (positionFromJson === "bottom") {
+            container.style.margin = ((parent_position.height + (containerPosition.height / 2))) + "px 0px 0px 0px";
+        }
+        container.style.display = 'initial';
         return container
+        //}, 500);
 
     } catch (err) {
-        window.alert("Objekt sa na stráne nenachádza, ukončujem tutorial");
+        window.alert("Objekt sa na stráne nenachádza, ukončujem tutoriál");
         aktualnyKrok = 0;
         aktualnyTutorial = 0;
         closeTutorial();
@@ -140,82 +190,51 @@ function createNav(text, element) {
 }
 
 function nextKrok(cisloTutorialu) {
-    console.log("som tu");
     try {
-        if (aktualnyKrok < (krokJSON.tutorialy[cisloTutorialu].kroky.length - 1)) {
-            aktualnyKrok += 1;
-            krokyTutorialu.textContent = (aktualnyKrok + 1) + "/" + krokJSON.tutorialy[cisloTutorialu].kroky.length;
-            var krokContainer = document.getElementsByClassName('krokContainer')[0];
-            var borderNav = document.getElementsByClassName('borderNav')[0];
+        if (aktualnyKrok < (tutorialsJSON.tutorialy[cisloTutorialu].kroky.length - 1)) {
+            aktualnyKrok = parseInt(aktualnyKrok) + 1;
+            krokyTutorialu.textContent = "Krok " + parseInt(aktualnyKrok + 1) + "/" + tutorialsJSON.tutorialy[cisloTutorialu].kroky.length;
+            const krokContainer = document.getElementsByClassName('krokContainer')[0];
+            const borderNav = document.getElementsByClassName('borderNav')[0];
             krokContainer.remove();
             borderNav.remove();
-            var newElement = getElementByXpath(krokJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].xpath);
-            var newNav = createNav(krokJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].popis, newElement);
-            helperLayer.appendChild(newNav);
-
-            var spatButton = document.getElementsByClassName('spatButton')[0];
-            var nextButton = document.getElementsByClassName('nextButton')[0];
-
-            spatButton.onclick = function () {
-                spatKrok(cisloTutorialu);
-            };
-            nextButton.onclick = function () {
-                nextKrok(cisloTutorialu);
-            };
+            const newElement = getElementByXpath(tutorialsJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].xpath);
+            createNav(tutorialsJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].popis, newElement);
         }
     } catch (err) {
     }
 }
 
 function spatKrok(cisloTutorialu) {
-    if (aktualnyKrok > 0) {
-        aktualnyKrok -= 1;
-        krokyTutorialu.textContent = (aktualnyKrok + 1) + "/" + krokJSON.tutorialy[cisloTutorialu].kroky.length;
-        var krokContainer = document.getElementsByClassName('krokContainer')[0];
-        var borderNav = document.getElementsByClassName('borderNav')[0];
-        krokContainer.remove();
-        borderNav.remove();
-
-        var newElement = getElementByXpath(krokJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].xpath);
-        var newNav = createNav(krokJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].popis, newElement);
-        helperLayer.appendChild(newNav);
-
-        var spatButton = document.getElementsByClassName('spatButton')[0];
-        var nextButton = document.getElementsByClassName('nextButton')[0];
-
-        spatButton.onclick = function () {
-            spatKrok(cisloTutorialu);
-        };
-        nextButton.onclick = function () {
-            nextKrok(cisloTutorialu);
-        };
+    try {
+        if (aktualnyKrok > 0) {
+            aktualnyKrok -= 1;
+            krokyTutorialu.textContent = "Krok " + parseInt(aktualnyKrok + 1) + "/" + tutorialsJSON.tutorialy[cisloTutorialu].kroky.length;
+            const krokContainer = document.getElementsByClassName('krokContainer')[0];
+            const borderNav = document.getElementsByClassName('borderNav')[0];
+            krokContainer.remove();
+            borderNav.remove();
+            const newElement = getElementByXpath(tutorialsJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].xpath);
+            createNav(tutorialsJSON.tutorialy[cisloTutorialu].kroky[aktualnyKrok].popis, newElement);
+        }
+    } catch (err) {
     }
 }
 
 function openTutorial(cislo) {
     try {
         aktualnyTutorial = cislo;
-        var sidePanelTutorialHeadline = document.getElementsByClassName('sidePanelTutorialHeadline')[0];
-        sidePanelTutorialHeadline.textContent = krokJSON.tutorialy[cislo].nazov;
+        const sidePanelTutorialHeadline = document.getElementsByClassName('sidePanelTutorialHeadline')[0];
+        sidePanelTutorialHeadline.textContent = tutorialsJSON.tutorialy[cislo].nazov;
         sidePanelMain.style.display = 'none';
         sidePanelTutorial.style.display = 'initial';
-        krokyTutorialu.textContent = krokJSON.tutorialy[cislo].kroky[aktualnyKrok].cislo + "/" + krokJSON.tutorialy[cislo].kroky.length;
+        krokyTutorialu.textContent = "Krok " + tutorialsJSON.tutorialy[cislo].kroky[aktualnyKrok].cislo + "/" + tutorialsJSON.tutorialy[cislo].kroky.length;
         helperLayer.style.display = 'initial';
 
-        var newElement = getElementByXpath(krokJSON.tutorialy[cislo].kroky[aktualnyKrok].xpath);
-        var newNav = createNav(krokJSON.tutorialy[cislo].kroky[aktualnyKrok].popis, newElement);
-        /*helperLayer.appendChild(newNav);*/
-        var spatButton = document.getElementsByClassName('spatButton')[0];
-        var nextButton = document.getElementsByClassName('nextButton')[0];
-
-        spatButton.onclick = function () {
-            spatKrok(cislo);
-        };
-        nextButton.onclick = function () {
-            nextKrok(cislo);
-        };
+        const newElement = getElementByXpath(tutorialsJSON.tutorialy[cislo].kroky[aktualnyKrok].xpath);
+        createNav(tutorialsJSON.tutorialy[cislo].kroky[aktualnyKrok].popis, newElement);
     } catch (err) {
-
+        closeTutorial();
     }
 }
 
@@ -233,33 +252,43 @@ function closeTutorial() {
 }
 
 function createZoznamTutorialov() {
-    var sidePanelZoznam = document.getElementsByClassName('sidePanelZoznam')[0];
-    for (var i = 0; i < krokJSON.tutorialy.length; i++) (function (i) {
-        var sidePanelZoznamItem = document.createElement('li');
-        sidePanelZoznamItem.innerText = krokJSON.tutorialy[i].nazov;
+    const sidePanelZoznam = document.getElementsByClassName('sidePanelZoznam')[0];
+    for (let i = 0; i < tutorialsJSON.tutorialy.length; i++) (function (i) {
+        const sidePanelZoznamItem = document.createElement('li');
+        sidePanelZoznamItem.innerText = tutorialsJSON.tutorialy[i].nazov;
         sidePanelZoznamItem.onclick = function () {
+            clickGuideButton();
             openTutorial(i);
         };
         sidePanelZoznam.appendChild(sidePanelZoznamItem);
     })(i);
 }
 
+function clickGuideButton(){
+    guideButton.style.transition = '0.5s';
+    if (guideButton.style.left === '400px') {
+        sidePanel.style.width = '0px';
+        guideButton.style.left = '0px';
+    } else {
+        sidePanel.style.width = '400px';
+        guideButton.style.left = '400px';
+    }
+}
 
+guideButton.className = 'guideButton';
 helperLayer.className = 'helperLayer';
 sidePanel.className = 'sidePanel';
 sidePanelHeadline.className = 'sidePanelHeadline';
 sidePanelMain.className = 'sidePanelMain';
 sidePanelPopis.className = 'sidePanelPopis';
-sidePanelZoznam.className = 'sidePanelZoznam';
-sidePanelZobraz.className = 'sidePanelZobraz';
 sidePanelTutorial.className = 'sidePanelTutorial';
 sidePanelTutorialHeadline.className = 'sidePanelTutorialHeadline';
-guideButton.className = 'guideButton';
+sidePanelZoznam.className = 'sidePanelZoznam';
+ukoncitTutorialButton.className = 'ukoncitTutorialButton';
 
-sidePanelHeadline.textContent = "VITAJTE V TUTORIALI PRE STRANKU AIS.SK";
-sidePanelPopis.textContent = "Dostupne tutorialy";
-sidePanelZobraz.textContent = "Zobraz guide ->";
-guideButton.textContent = "GUIDE";
+guideButton.textContent = "TUTORIÁLY";
+sidePanelHeadline.textContent = headlineGuide;
+sidePanelPopis.textContent = "Dostupné tutoriály";
 
 sidePanelTutorial.style.display = 'none';
 
@@ -269,71 +298,36 @@ sidePanel.appendChild(sidePanelHeadline);
 sidePanel.appendChild(sidePanelMain);
 sidePanelMain.appendChild(sidePanelPopis);
 sidePanelMain.appendChild(sidePanelZoznam);
-sidePanelMain.appendChild(sidePanelZobraz);
 sidePanel.appendChild(sidePanelTutorial);
 sidePanelTutorial.appendChild(sidePanelTutorialHeadline);
 document.body.appendChild(guideButton);
 
+sidePanel.style.backgroundColor = farbaPanelu;
+
 createZoznamTutorialov();
 
-sidePanelTutorial.innerHTML = "<br><br><p>Tutoriál:</p><br><p class='sidePanelTutorialHeadline'></p><br><p>KROK</p><p class='krokyTutorialu'></p><p class='ukoncitTutorial'><- Ukončiť tutoriál</p>";
-var ukoncitTutorial = document.getElementsByClassName('ukoncitTutorial')[0];
+sidePanelTutorial.innerHTML = "<br><br><p>Názov tutoriálu:</p><br><p class='sidePanelTutorialHeadline'></p><br><p class='krokyTutorialu'></p>";
+sidePanelTutorial.appendChild(ukoncitTutorialButton);
 
-ukoncitTutorial.onclick = function () {
+ukoncitTutorialButton.innerText = "Ukončiť tutoriál";
+
+ukoncitTutorialButton.onclick = function () {
     closeTutorial();
 };
 
 krokyTutorialu = document.getElementsByClassName('krokyTutorialu')[0];
 
 guideButton.onclick = function () {
-    guideButton.style.transition = '0.5s';
-    if (guideButton.style.left === '400px') {
-        sidePanel.style.width = '0px';
-        guideButton.style.left = '0px';
-    } else {
-        sidePanel.style.width = '400px';
-        guideButton.style.left = '400px';
-    }
+    clickGuideButton();
 };
 
 if (sessionStorage.length !== 0) {
     aktualnyTutorial = sessionStorage.getItem("tutorial");
     aktualnyKrok = sessionStorage.getItem("krok");
-    openTutorial(aktualnyTutorial);
+    window.onload = function () {
+        setTimeout(function () {
+            openTutorial(aktualnyTutorial);
+        }, 1000);
+    };
 }
 
-window.onbeforeunload = function () {
-    aktualnyKrok = 0;
-    aktualnyTutorial = 0;
-    //sessionStorage.clear();
-};
-
-
-/*
-var deleteButton = document.createElement('button');
-deleteButton.className='delteButton';
-deleteButton.innerText='DELETE';
-sidePanel.appendChild(deleteButton);
-
-deleteButton.onclick = function () {
-    var myNode = document.getElementsByClassName('sidePanelMain')[0].querySelectorAll("ol");
-    console.log(myNode);
-    myJSON = JSON.stringify(myNode.item(0));
-
-    while (sidePanelMain.firstChild) {
-        sidePanelMain.removeChild(sidePanelMain.firstChild);
-    }
-};
-
-
-var appearButton = document.createElement('button');
-appearButton.className='appearButton';
-appearButton.innerText='APPEAR';
-sidePanel.appendChild(appearButton);
-
-appearButton.onclick=function(){
-    console.log(myJSON);
-    console.log(JSON.parse(myJSON));
-    sidePanelMain=JSON.parse(myJSON);
-};
-*/
