@@ -64,7 +64,7 @@
             link.id = cssTutorial;
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            link.href = 'cssTutorialAdmin.css';
+            link.href = 'assets/categories/cssTutorialAdmin.css';
             link.media = 'all';
             head.appendChild(link);
         }
