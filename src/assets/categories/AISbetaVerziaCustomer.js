@@ -6,7 +6,7 @@
  * @type {string}
  */
 
-const pathToJson = 'assets/categories/ais_krok.json';
+const pathToJson = 'assets/categories/sused.json';
 const headlineGuide = 'Tutoriály pre stránku is.stuba.sk';
 const farbaPanelu = '#006401';
 
