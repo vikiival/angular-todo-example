@@ -1,0 +1,23 @@
+{
+  "tutorialy": [
+    {
+      "nazov": "Testovaci sused",
+      "kroky": [
+        {
+          "cislo": 1,
+          "popis": "Klikni na portál študenta",
+          "xpath": "/html/body/app-root/app-header/mat-toolbar/button",
+          "krokovatel": "0",
+          "multipage": "1"
+        },
+        {
+          "cislo": 2,
+          "popis": "Is this ok",
+          "xpath": "//*[@id=\"mat-dialog-0\"]",
+          "krokovatel": "1",
+          "multipage": "0"
+        }
+      ]
+    }
+  ]
+}
