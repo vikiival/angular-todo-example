@@ -171,8 +171,12 @@
             } else if ((e.target.className === 'sidePanelCreateTutorialAddZnackuButton' && pressedButton.className === 'sidePanelCreateTutorialAddZnackuButton')
                 || (e.target.className === 'sidePanelCreateTutorialAddZnackuKrokButton' && pressedButton.className === 'sidePanelCreateTutorialAddZnackuKrokButton')
             ) {
-                if(container === null)
-                    document.removeEventListener("click", handler, true);
+              if (container === null) {
+                document.removeEventListener("click", handler, true);
+              } else {
+                e.stopPropagation();
+                e.preventDefault();
+              }
             } else if (e.target.className !== 'guideButton' && e.target.parentNode.className !== 'sidePanelCreateMenu'
                 && e.target.parentNode.className !== 'sidePanel' && e.target.className !== 'sidePanel' && e.target.parentNode.className !== 'fadeLayer' &&
                 e.target.parentNode.className !== 'sidePanelCreateTutorialRadio' && e.target.className !== 'sidePanelTutorial' && e.target.parentNode.className !== 'sidePanelTutorial'

@@ -7,7 +7,7 @@ var krokJSON;
 function loadJSON(callback) {
     var xobj = new XMLHttpRequest();
     xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'assets/categories/ais_krok.json', false); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'assets/categories/sused.json', false); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
         if (xobj.readyState === 4 && xobj.status === 200) {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode

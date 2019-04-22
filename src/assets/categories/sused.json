@@ -1,0 +1,52 @@
+{
+  "tutorialy": [
+    {
+      "nazov": "Testovaci sused",
+      "kroky": [
+        {
+          "cislo": 1,
+          "popis": "Klikni na portál študenta",
+          "xpath": "/html/body/app-root/app-header/mat-toolbar/button",
+          "krokovatel": "0",
+          "multipage": "1"
+        },
+        {
+          "cislo": 2,
+          "popis": "Is this ok",
+          "xpath": "//*[@id=\"mat-dialog-0\"]",
+          "krokovatel": "1",
+          "multipage": "0"
+        }
+      ]
+    },
+    {
+      "nazov": "Najdi zahradnika",
+      "kroky": [
+        {
+          "cislo": 1,
+          "krokovatel": 0,
+          "multipage": 1,
+          "popis": "Klikni na ",
+          "xpath": "/HTML/BODY/APP-ROOT/DIV/APP-WELCOME/DIV[3]/DIV/APP-CATEGORY/DIV/MAT-CARD/IMG",
+          "position": "top"
+        },
+        {
+          "cislo": 2,
+          "krokovatel": 0,
+          "multipage": 1,
+          "popis": "Klikni na ponuku",
+          "xpath": "/HTML/BODY/APP-ROOT/DIV/APP-CATEGORY-LIST/DIV/DIV/DIV/APP-LIST-ITEM/MAT-CARD/DIV/MAT-CARD-CONTENT/MAT-CARD-ACTIONS/BUTTON/SPAN",
+          "position": "top"
+        },
+        {
+          "cislo": 3,
+          "krokovatel": 1,
+          "multipage": 0,
+          "popis": "Klikni na kontakt",
+          "xpath": "/HTML/BODY/APP-ROOT/DIV/APP-ITEM-DETAIL/DIV/MAT-CARD/DIV/MAT-CARD-ACTIONS/BUTTON[2]/SPAN",
+          "position": "top"
+        }
+      ]
+    }
+  ]
+}
