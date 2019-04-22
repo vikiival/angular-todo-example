@@ -232,6 +232,7 @@
                  parent_position = element.getBoundingClientRect();
 
 
+
                 const marginTopContainer = -70;
 
                 container.className = "krokContainer";
@@ -245,7 +246,7 @@
                 helperLayer.appendChild(borderNav);
 
                 fadeLayer.className = 'fadeLayer';
-                styleText = 'display: initial; height:' + document.documentElement.getBoundingClientRect().height + 'px;';
+                styleText = 'display: initial; height:' + document.documentElement.scrollHeight + 'px;';
                 fadeLayer.style.cssText += styleText;
                 document.body.appendChild(fadeLayer);
 
