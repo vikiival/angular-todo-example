@@ -284,7 +284,7 @@ function createZoznamTutorialov() {
         sidePanelZoznamItem.innerText = tutorialsJSON.tutorialy[i].nazov;
         sidePanelZoznamItem.onclick = function () {
             clickGuideButton();
-            /*window.onmousedown = function (){observer.observe(hlavnyElement, config);};*/
+            observer.observe(hlavnyElement, config);
             openTutorial(i);
         };
         sidePanelZoznam.appendChild(sidePanelZoznamItem);
