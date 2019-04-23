@@ -46,6 +46,9 @@ if (!document.getElementById(cssTutorial)) {
     head.appendChild(link);
 }
 
+
+
+
 const fadeLayer = document.createElement('div');
 const fadeLayerBottom = document.createElement('div');
 const fadeLayerLeft = document.createElement('div');
@@ -65,6 +68,25 @@ let krokyTutorialu;
 let aktualnyKrok = 0;
 let aktualnyTutorial;
 let parent_position;
+
+
+
+var callback = function(mutationsList, observer) {
+  if (sessionStorage.length !== 0) {
+    console.log("wtf");
+    aktualnyTutorial = sessionStorage.getItem("tutorial");
+    aktualnyKrok = sessionStorage.getItem("krok");
+    //window.onload = function () {
+    setTimeout(function () {
+      openTutorial(aktualnyTutorial);
+    }, 1000);
+    //};
+  }
+};
+
+var observer = new MutationObserver(callback);
+const hlavnyElement = document.getElementsByTagName("app-root")[0];
+var config = { attributes: true, childList: true, subtree: true };
 
 function getElementByXpath(path) {
     return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
@@ -223,6 +245,9 @@ function spatKrok(cisloTutorialu) {
 
 function openTutorial(cislo) {
     try {
+      while (helperLayer.firstChild) {
+        helperLayer.removeChild(helperLayer.firstChild);
+      }
         aktualnyTutorial = cislo;
         const sidePanelTutorialHeadline = document.getElementsByClassName('sidePanelTutorialHeadline')[0];
         sidePanelTutorialHeadline.textContent = tutorialsJSON.tutorialy[cislo].nazov;
@@ -249,6 +274,7 @@ function closeTutorial() {
     }
     aktualnyTutorial = -1;
     sessionStorage.clear();
+    observer.disconnect();
 }
 
 function createZoznamTutorialov() {
@@ -258,6 +284,7 @@ function createZoznamTutorialov() {
         sidePanelZoznamItem.innerText = tutorialsJSON.tutorialy[i].nazov;
         sidePanelZoznamItem.onclick = function () {
             clickGuideButton();
+            /*window.onmousedown = function (){observer.observe(hlavnyElement, config);};*/
             openTutorial(i);
         };
         sidePanelZoznam.appendChild(sidePanelZoznamItem);
@@ -321,13 +348,24 @@ guideButton.onclick = function () {
     clickGuideButton();
 };
 
-if (sessionStorage.length !== 0) {
+window.onload = function(){
+  /*const hlavnyElement = document.getElementsByTagName("app-root")[0];
+  var config = { attributes: true, childList: true, subtree: true };*/
+  /*observer.observe(hlavnyElement, config);*/
+};
+
+
+/*hlavnyElement.onchange = function() {
+  console.log("yeah");
+  if (sessionStorage.length !== 0) {
+    console.log("wtf");
     aktualnyTutorial = sessionStorage.getItem("tutorial");
     aktualnyKrok = sessionStorage.getItem("krok");
-    window.onload = function () {
-        setTimeout(function () {
-            openTutorial(aktualnyTutorial);
-        }, 1000);
+    hlavnyElement.onchange = function () {
+      setTimeout(function () {
+        openTutorial(aktualnyTutorial);
+      }, 1000);
     };
-}
+  }
+};*/
 
