@@ -1,309 +1,314 @@
-.helperLayer {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: none;
+#helperLayer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
 }
 
-.krokContainer {
-    position: absolute;
-    width: max-content;
-    z-index: 9999;
+#krokContainer {
+  position: absolute;
+  width: max-content;
+  z-index: 9999;
 }
 
-.borderNav {
-    position: absolute;
-    pointer-events: none;
-    border: solid;
+#borderNav {
+  position: absolute;
+  pointer-events: none;
+  border: solid;
 }
 
-.textBlock{
-    background-color: black;
-    display: inline-block;
-    padding: 10px;
-    /*width: 200px;*/
+#textBlock{
+  background-color: black;
+  display: inline-block;
+  padding: 10px;
+  /*width: 200px;*/
 }
 
-.textBlock p{
-    color: white;
-    font-family: Arial, serif;
-    font-weight: bold;
-    margin-left: 0;
-    font-size: small;
+#textBlock p{
+  color: white;
+  font-family: Arial, serif;
+  font-weight: bold;
+  margin-left: 0;
+  font-size: small;
 }
 
-.textBlock button{
-    padding: 1px 6px;
-    margin-bottom: 0;
+#textBlock button{
+  padding: 1px 6px;
+  margin-bottom: 0;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
-.fadeLayer {
-    position: absolute;
-    display: initial;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    z-index: 10;
-    overflow: hidden
+#fadeLayer {
+  position: absolute;
+  display: initial;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden
 }
 
-.fadeLayerTop {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0.5;
-    background-color: black;
-    z-index: 10;
-    pointer-events: all;
+#fadeLayerTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 10;
+  pointer-events: all;
 }
 
-.fadeLayerLeft {
-    position: absolute;
-    opacity: 0.5;
-    background-color: black;
-    z-index: 10;
-    pointer-events: all;
+#fadeLayerLeft {
+  position: absolute;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 10;
+  pointer-events: all;
 }
 
-.fadeLayerRight {
-    position: absolute;
-    opacity: 0.5;
-    background-color: black;
-    z-index: 10;
-    pointer-events: all;
+#fadeLayerRight {
+  position: absolute;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 10;
+  pointer-events: all;
 }
 
-.fadeLayerBottom {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0.5;
-    background-color: black;
-    z-index: 10;
-    pointer-events: all;
+#fadeLayerBottom {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background-color: black;
+  z-index: 10;
+  pointer-events: all;
 }
 
-.sidePanel {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    font-family: Arial, serif;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    background-color: #115483;
-    overflow-x: hidden;
-    transition: 0.5s;
-    white-space: nowrap;
-    padding-top: 60px;
+#sidePanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  font-family: Arial, serif;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  background-color: #115483;
+  overflow-x: hidden;
+  transition: 0.5s;
+  white-space: nowrap;
+  padding-top: 60px;
 }
 
-.sidePanel p {
-    font-family: Arial, serif;
-    font-weight: bold;
-    color: white;
-    font-size: medium;
-    margin-left: 10px;
+#sidePanel p {
+  font-family: Arial, serif;
+  font-weight: bold;
+  color: white;
+  font-size: medium;
+  margin-left: 10px;
 }
 
-.sidePanelMain {
-    cursor: pointer;
+#sidePanelMain {
+  cursor: pointer;
 }
 
-.sidePanelCreateMenu{
-    margin-left: 10px;
+#sidePanelCreateMenu{
+  margin-left: 10px;
 }
 
-p.sidePanelCreateTutorialNazov{
-    font-size: small;
-    margin-bottom: 0;
-    margin-top: 10px;
+p#sidePanelCreateTutorialNazov{
+  font-size: small;
+  margin-bottom: 0;
+  margin-top: 10px;
 }
 
-.sidePanelMain p:hover {
-    text-decoration: underline;
+#sidePanelMain p:hover {
+  text-decoration: underline;
 }
 
-.sidePanel p.sidePanelPopis {
-    cursor: default;
+#sidePanel p#sidePanelPopis {
+  cursor: default;
 }
 
-.sidePanel p.sidePanelPopis:hover{
-    text-decoration: none;
+#sidePanel p#sidePanelPopis:hover{
+  text-decoration: none;
 }
 
-.sidePanel .sidePanelHeadline {
-    background: none;
-    margin: 0 0 100px;
-    padding: 0;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
-    border: none;
-    width: 400px;
-    white-space: normal;
-    text-align: center;
-    line-height: 30px;
+#sidePanel #sidePanelHeadline {
+  background: none;
+  margin: 0 0 100px;
+  padding: 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
+  border: none;
+  width: 400px;
+  white-space: normal;
+  text-align: center;
+  line-height: 30px;
 }
 
-.sidePanel .sidePanelPopis {
-    background: none;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#sidePanel #sidePanelPopis {
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.sidePanel .sidePanelZoznam {
-    font-size: 15px;
-    color: white;
+#sidePanel #sidePanelZoznam {
+  font-size: 15px;
+  color: white;
 }
 
-.sidePanel .sidePanelZoznam li {
-    background: none;
-    padding: 5px;
-    list-style: decimal;
-    cursor: pointer;
+#sidePanel #sidePanelZoznam li {
+  background: none;
+  padding: 5px;
+  list-style: decimal;
+  cursor: pointer;
 }
 
-.sidePanel .sidePanelZoznam li:hover{
-   text-decoration: underline;
+#sidePanel #sidePanelZoznam li:hover{
+  text-decoration: underline;
 }
 
-.sidePanel .sidePanelZobraz {
-    background: none;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#sidePanel #sidePanelZobraz {
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.sidePanel .sidePanelTutorialHeadline {
-    background: none;
-    margin: 0;
-    text-align: center;
-    padding: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#sidePanel #sidePanelTutorialHeadline {
+  background: none;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.sidePanel .sidePanelTutorial{
-    margin-left: 10px;
+#sidePanel #sidePanelTutorial{
+  margin-left: 10px;
 }
 
-.sidePanel .sidePanelTutorial .sidePanelBackButton{
-    padding: 8px 1px;
-    margin-left: 0;
+#sidePanel #sidePanelTutorial #sidePanelBackButton{
+  padding: 8px 1px;
+  margin-left: 0;
 }
 
-.sidePanel .sidePanelTutorial p {
-    background: none;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#sidePanel #sidePanelTutorial p {
+  background: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.sidePanel .sidePanelTutorial p.sidePanelCreateTutorialNazov{
-    font-size: small;
-    margin-top: 20px;
+#sidePanel #sidePanelTutorial p#sidePanelCreateTutorialNazov{
+  font-size: small;
+  margin-top: 20px;
 }
 
-.sidePanel .sidePanelTutorial p.sidePanelCreateTutorialKrok{
-    margin-top: 10px;
+#sidePanel #sidePanelTutorial p#sidePanelCreateTutorialKrok{
+  margin-top: 10px;
 }
 
-.sidePanel .sidePanelTutorial p.sidePanelEditTutorialPopisKroku{
-    font-size: small;
-    margin-top: 10px;
+#sidePanel #sidePanelTutorial p#sidePanelEditTutorialPopisKroku{
+  font-size: small;
+  margin-top: 10px;
 }
 
-.sidePanel p.krokyTutorialu {
-    text-align: center;
-    background: none;
-    margin: 0;
-    padding: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#sidePanel p#krokyTutorialu {
+  text-align: center;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.sidePanel .sidePanelCreateMenu input.sidePanelEditTutorialPopisKrokuInput{
-    margin-bottom: 20px;
+#sidePanel #sidePanelCreateMenu input#sidePanelEditTutorialPopisKrokuInput{
+  margin-bottom: 20px;
 }
 
-.sidePanel .sidePanelCreateMenu button.sidePanelCreateTutorialAddZnackuKrokButton{
-    margin-bottom: 196px;
+#sidePanel #sidePanelCreateMenu button#sidePanelCreateTutorialAddZnackuKrokButton{
+  margin-bottom: 196px;
 }
 
-.ukoncitTutorial {
-    background: none;
-    margin-top: 20px;
-    padding: 0;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    transition: 0.5s;
+#ukoncitTutorial {
+  background: none;
+  margin-top: 20px;
+  padding: 0;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  transition: 0.5s;
 }
 
-.guideButton {
-    position: fixed;
-    cursor: pointer;
-    background-color: black;
-    left: 0;
-    top: 50%;
-    font-size: 15px;
-    color: white;
-    transform: rotate(-90deg);
-    transform-origin: left;
-    padding: 5px;
-    margin: 10px;
-    z-index: 99999;
+#guideButton {
+  position: fixed;
+  cursor: pointer;
+  background-color: black;
+  left: 0;
+  top: 50%;
+  font-size: 15px;
+  color: white;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  padding: 5px;
+  margin: 10px;
+  z-index: 99999;
 }
 
-button{
-    cursor: pointer;
-    margin-bottom: 10px;
-    padding: 8px 1px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
+#sidePanel button{
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 8px 1px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
 }
 
-.sidePanel button.ukoncitTutorialButton {
-    margin: 30px 0 0 10px;
+#sidePanel button#ukoncitTutorialButton {
+  margin: 30px 0 0 10px;
 }
 
-.buttonArea button{
-    padding: 1px 6px;
-    margin-bottom: 0;
+#buttonArea button{
+  padding: 1px 6px;
+  margin-bottom: 0;
 }
 
-.sidePanelBackButton{
-    padding: 5px 15px;
-    margin-left: 15px;
+#sidePanel #sidePanelBackButton{
+  padding: 5px 15px;
+  margin-left: 15px;
 }
 
-.sidePanelCreateTutorialRadio{
-    margin: 15px 0 15px 0;
-    color: white;
+#sidePanelCreateTutorialRadio{
+  margin: 15px 0 15px 0;
+  color: white;
 }
 
 
