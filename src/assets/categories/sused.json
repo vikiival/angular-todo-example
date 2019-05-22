@@ -35,7 +35,7 @@
           "krokovatel": 0,
           "multipage": 1,
           "popis": "Klikni na ponuku",
-          "xpath": "/HTML/BODY/APP-ROOT/DIV/APP-CATEGORY-LIST/DIV/DIV/DIV/APP-LIST-ITEM/MAT-CARD/DIV/MAT-CARD-CONTENT/MAT-CARD-ACTIONS/BUTTON/SPAN",
+          "xpath": "/html/body/app-root/div/app-category-list/div/div[1]/div[2]/app-list-item/mat-card/div/mat-card-content/mat-card-actions/button",
           "position": "top"
         },
         {
@@ -43,7 +43,7 @@
           "krokovatel": 1,
           "multipage": 0,
           "popis": "Klikni na kontakt",
-          "xpath": "/HTML/BODY/APP-ROOT/DIV/APP-ITEM-DETAIL/DIV/MAT-CARD/DIV/MAT-CARD-ACTIONS/BUTTON[2]/SPAN",
+          "xpath": "/html/body/app-root/div/app-item-detail/div/mat-card[1]/div/mat-card-actions/button[2]",
           "position": "top"
         }
       ]
