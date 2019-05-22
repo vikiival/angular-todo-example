@@ -34,7 +34,7 @@
      * @type {string}
      */
 
-    const pathToJson = 'assets/caregories/sused.json';
+    const pathToJson = 'assets/categories/sused.json';
     const farbaPanelu = '#831135';
     const pathToCss = 'assets/categories/cssTutorialAdmin.css';
 
